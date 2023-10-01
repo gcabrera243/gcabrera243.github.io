@@ -2,11 +2,12 @@ Title: TA4 - Algoritmos Lineales - Implementación en Python
 Date: 2023-09-03 10:20
 Category: UT3
 cover:
-tags: 'TAs','UT3','TA4' 
+tags: 'TAs','UT3','TA4'
 
 El objetivo es entender como utilizar regresion logistica en python.
 
 ## Logisitic Regression
+
 class LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):
 
 En el caso multiclase, el algoritmo de entrenamiento utiliza uno contra resto (OvR)
@@ -49,39 +50,42 @@ n_jobs: Número de núcleos de CPU utilizados al paralelizar sobre las clases.
 l1_ratio: El parámetro de mezcla Elastic-Net.
 
 Atributos
-classes_: Lista de etiquetas de clases conocidas por el clasificador.
+classes\_: Lista de etiquetas de clases conocidas por el clasificador.
 
-coef_: Coeficiente de las características en la función de decisión.
+coef\_: Coeficiente de las características en la función de decisión.
 
-intercept_: Intercepto (sesgo) añadido a la función de decisión.
+intercept\_: Intercepto (sesgo) añadido a la función de decisión.
 
-n_features_in_: Número de características vistas durante el ajuste.
+n*features_in*: Número de características vistas durante el ajuste.
 
-feature_names_in_: Nombres de las características vistas durante el ajuste.
+feature*names_in*: Nombres de las características vistas durante el ajuste.
 
-n_iter_: Número real de iteraciones para todas las clases.
+n*iter*: Número real de iteraciones para todas las clases.
 
 ## Carga de datos
+
 Crear un archivo Python y agregar las dependencias necesarias.
 Leer el dataset desde el archivo CSV utilizando la librería Pandas. Y ver como esta
 compuesto
 Obtener a partir del dataset los datos y las clases.
 
 ## Entrenamiento y testing
+
 Dividir el conjunto de datos en 2, uno para entrenamiento y otro para prueba.
 Crear el un modelo de LR y entrenarlo.
 
 ## Evaluación
+
 Predecir las clases para los datos del conjunto de prueba y ver los resultados
 
-![PredictedVsExpected](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA4/PredictedVsExpected.png?raw=true)
+![PredictedVsExpected](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA4/PredictedVsExpected.png?raw=true)
 
 Probar el modelo y ver el reporte.
-![Report](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA4/Report.png?raw=true)
+![Report](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA4/Report.png?raw=true)
 
 Ver la matriz de confusión
-![Matrix](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA4/Matrix.png?raw=true)
-
+![Matrix](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA4/Matrix.png?raw=true)
 
 ## Archivos
-[UT3_TA4_PD_Ej4.ipynb](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA4/UT3_TA4_PD_Ej4.ipynb?raw=true)
+
+[UT3_TA4_PD_Ej4.ipynb](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA4/UT3_TA4_PD_Ej4.ipynb?raw=true)

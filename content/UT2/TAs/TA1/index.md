@@ -2,15 +2,16 @@ Title: TA1 - Procesamiento previo de los datos - Titanic
 Date: 2023-09-03 10:20
 Category: UT2
 cover:
-tags: ['TAs'] 
+tags: ['TAs']
 
 En este articulo, investigaremos el dataset de titanic.
 
-# Problema 
+# Problema
 
 Se busca predecir dado los datos que se conocen antes de embarcar, si la persona embarcada sobrevivirá o no.
 
 # Atributos
+
 Clase Objetivo
 survived - Supervivencia (0 = No; 1 = Sí)
 
@@ -28,34 +29,35 @@ embarked - Puerto de Embarque (C = Cherbourg; Q = Queenstown; S = Southampton)
 boat - Bote Salvavidas (si sobrevivió)
 body - Número de Cuerpo (si no sobrevivió y el cuerpo fue recuperado)
 
-![atributos](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/Atributos.png?raw=true)
+![atributos](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA1/Atributos.png?raw=true)
 
 De estas estadísticas se puede ver que faltan:
 
-- 264 Edades
-- 2 Tarifa del Pasajero
-- 1015 Cabinas
-- 3 Puertos de embarque
-- 824 botes salvavidas
-entre otros
+-   264 Edades
+-   2 Tarifa del Pasajero
+-   1015 Cabinas
+-   3 Puertos de embarque
+-   824 botes salvavidas
+    entre otros
 
 # Tratamiento de los datos
+
 El bote salvavidas y el numero de cuerpo no son atributos que nos sirvan porque no contamos con esta informacion a la hora de embarcar.
 Cabinas tampoco nos sirve porque tiene muchisimos valores faltantes 1015 de 1310 posibles.
 Para los datos faltantes lo que se hizo fue reemplazarlos utilizando el promedio.
 Luego se normalizan todos los datos.
 
-
 # Correlaciones
 
 Modelando el problema obtenemos la siguiente matriz de correlacion.
-![CorrelationMatrix](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/CorrelationMatrix.png?raw=true)
+![CorrelationMatrix](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA1/CorrelationMatrix.png?raw=true)
 
 y los pesos son
 
-![Weights](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/Weights.png?raw=true)
+![Weights](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA1/Weights.png?raw=true)
 
 ## Archivos
+
 A continuacion se deja el proceso de RapidMiner
 
-- [TA1](https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/TA1.rmp?raw=true)
+-   [TA1](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA1/TA1.rmp?raw=true)

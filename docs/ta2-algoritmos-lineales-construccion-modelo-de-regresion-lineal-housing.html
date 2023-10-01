@@ -33,7 +33,7 @@
 
 
 
-    <meta name="description" content="Los objetivos de este Trabajo de Aplicación son: 1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para...">
+    <meta name="description" content="Los objetivos de este Trabajo de Aplicación son: Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir...">
 
     <meta name="author" content="Gaston Cabrera">
 
@@ -47,7 +47,7 @@
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Portafolio IA"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:title" content="TA2 - Algoritmos Lineales - Construcción modelo de Regresión Lineal - Housing"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="Los objetivos de este Trabajo de Aplicación son: 1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="Los objetivos de este Trabajo de Aplicación son: Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir..."/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:url" content="/ta2-algoritmos-lineales-construccion-modelo-de-regresion-lineal-housing.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
@@ -77,7 +77,7 @@
   },
   "image": "/theme/images/post-bg.jpg",
   "url": "/ta2-algoritmos-lineales-construccion-modelo-de-regresion-lineal-housing.html",
-  "description": "Los objetivos de este Trabajo de Aplicación son: 1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para..."
+  "description": "Los objetivos de este Trabajo de Aplicación son: Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir..."
 }
 </script>
 </head>
@@ -142,11 +142,13 @@
         <article class="post">
         <div class="inner">
             <section class="post-content">
-                <p>Los objetivos de este Trabajo de Aplicación son:
-1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana
-de precios de una casa
-2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes
-3. Evaluar la exactitud del modelo para predecir nuevos ejemplos</p>
+                <p>Los objetivos de este Trabajo de Aplicación son:</p>
+<ol>
+<li>Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana
+   de precios de una casa</li>
+<li>Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes</li>
+<li>Evaluar la exactitud del modelo para predecir nuevos ejemplos</li>
+</ol>
 <h1>Problema</h1>
 <p>Predecir el precio de una vivienda a partir de su ubicacion y de algunos atributos.</p>
 <h1>Datos</h1>
@@ -234,15 +236,15 @@ de precios de una casa
 <p>Al analizar las estadisticas se detectan algunos posibles valores outliers en CHAS y en INDUS</p>
 <p>Lo que deberemos hacer es en un principio es randomizar el orden de los datos (así cuando separemos las dos particiones, éstas serán estadísticamente similares).</p>
 <p>Luego separaremos el dataset en un conjunto para entrenamiento y otro conjunto “no visto” de prueba. Para esto se usara el bloque Filter Examples de RapidMiner.
-<img alt="process1" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/process1.png?raw=true">
-<img alt="processvalidation" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/processvalidation.png?raw=true"></p>
+<img alt="process1" src="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/process1.png?raw=true">
+<img alt="processvalidation" src="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/processvalidation.png?raw=true"></p>
 <h1>Regresión Lineal</h1>
 <h2>¿Qué parámetros podemos variar en el operador “Linear Regression”?</h2>
 <ul>
 <li><strong>Feature selection</strong>: Determina el algoritmo de feature selection a utilizar durante la regresión.</li>
 <li><strong>Eliminate colinear features</strong>: Determina si el algoritmo debe intentar eliminar atributos correlaciones durante la regresión.</li>
 <li><strong>Use bias</strong>: Determina si se debería calcular el coeficiente independiente para el modelo.
-Ridge</li>
+    Ridge</li>
 </ul>
 <h2>¿Qué hace “feature selection”?</h2>
 <p>Filtra los atributos que participaran en la linear regression utilizando distintos algoritmos.</p>
@@ -253,16 +255,16 @@ Ridge</li>
 <h2>¿cuáles no parecen ser muy significativos?</h2>
 <p>Sin feature selection: ZN,INDUS,NOX y AGE parecen no ser significativos.
 squared_correlation (R2): 0.758
-<img alt="SalidaLinearRegression" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/SalidaLinearRegression.png?raw=true"></p>
+<img alt="SalidaLinearRegression" src="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/SalidaLinearRegression.png?raw=true"></p>
 <p>Con feature selection: Al aplicar Greedy se eliminan los que parecían no ser significativos.
 squared_correlation(R2): 0.752</p>
-<p><img alt="Greedy" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/Greedy.png?raw=true"></p>
+<p><img alt="Greedy" src="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/Greedy.png?raw=true"></p>
 <h1>Aplicación sobre datos “no vistos”</h1>
-<p><img alt="process2" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/process2.png?raw=true"></p>
+<p><img alt="process2" src="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/process2.png?raw=true"></p>
 <p>Al mirar las estadisticas de residuals podemos decir que se esta logrando identificar de manera casi correcta la variable objetivo.</p>
-<p><img alt="residuals" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/residuals.png?raw=true"></p>
+<p><img alt="residuals" src="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/residuals.png?raw=true"></p>
 <h1>Archivos</h1>
-<p>-<a href="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/TAs/TA2/UT3_TA2.rmp">UT3_TA2.rmp</a></p>
+<p>-<a href="https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/UT3_TA2.rmp">UT3_TA2.rmp</a></p>
             </section>
 
             <section class="post-info">
