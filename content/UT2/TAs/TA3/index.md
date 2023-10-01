@@ -25,7 +25,7 @@ sepal_width: Ancho del sépalo en centímetros.
 petal_length: Longitud del pétalo en centímetros.
 petal_width: Ancho del pétalo en centímetros.
 
-![estadisticas_iris](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA3/estadisticas_iris.png?raw=true)
+![estadisticas_iris](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA3/estadisticas_iris.png?raw=true)
 
 La variable objetivo es iris y puede tomar los valores "Iris setosa," "Iris versicolor," y "Iris virginica."
 
@@ -35,8 +35,8 @@ Al hacer la grafica podemos ver que hay 3 zonas claramente diferenciadas, repres
 
 También se puede notar una correlación bastante fuerte entre la longitud del pétalo y su ancho.
 dos.
-![scatter_plot](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA3/scatter_plot.png?raw=true)
+![scatter_plot](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA3/scatter_plot.png?raw=true)
 
 ## Archivos
 
--   [iris.rmp](https://github.com/gcabrera243/blob/main/content/UT2/TAs/TA3/iris.rmp?raw=true)
+-   [iris.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA3/iris.rmp?raw=true)

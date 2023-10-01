@@ -26,25 +26,25 @@ Variable objetivo: class (clase de vino) que es de tipo categórico
 Los atributos Magnesium y Proline son de tipo numérico entero.
 La mayoría de atributos son de tipo numérico de punto flotante.
 
-![atributos](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD1/atributos.jpg?raw=true)
+![atributos](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD1/atributos.jpg?raw=true)
 
 Se detectaron 10 outliers en los datos.
-![outliers](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD1/Outliers.png?raw=true)
+![outliers](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD1/Outliers.png?raw=true)
 
 Se crearon dos canales, uno donde se utiliza el dataset tal cual esta y otro en donde se aplican bloques para normalizar y estandarizar los datos.
 
 para el dataset sin bloques:
-![performance](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD1/PerformanceSinNormalizar.png?raw=true)
+![performance](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD1/PerformanceSinNormalizar.png?raw=true)
 
 Para el dataset con bloques:
-![performance](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD1/PerformanceNormalizado.png?raw=true)
+![performance](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD1/PerformanceNormalizado.png?raw=true)
 
 Dio mejor la performance de los datos sin normalizar en este caso. Esto puede ser por el split actual de datos.
 
 ## Archivos
 
 Archivos Ejercicio 1:
-[HandleMissingValues.rmp](https://github.com/gcabrera243/blob/main/content/UT3/PDs/PD1/HandleMissingValues.rmp?raw=true)
-[RemoveOutliers.rmp](https://github.com/gcabrera243/blob/main/content/UT3/PDs/PD1/RemoveOutliers.rmp?raw=true)
+[HandleMissingValues.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/HandleMissingValues.rmp?raw=true)
+[RemoveOutliers.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/RemoveOutliers.rmp?raw=true)
 Archivos Ejercicio 2:
-[UT2_PD1_Ej2.rmp](https://github.com/gcabrera243/blob/main/content/UT3/PDs/PD1/UT2_PD1_Ej2.rmp?raw=true)
+[UT2_PD1_Ej2.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/UT2_PD1_Ej2.rmp?raw=true)

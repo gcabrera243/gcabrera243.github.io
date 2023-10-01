@@ -6,10 +6,9 @@ tags: 'TAs','TA2','UT3'
 
 Los objetivos de este Trabajo de Aplicación son:
 
-1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana
-   de precios de una casa
-2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes
-3. Evaluar la exactitud del modelo para predecir nuevos ejemplos
+    1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana
+
+de precios de una casa 2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes 3. Evaluar la exactitud del modelo para predecir nuevos ejemplos
 
 # Problema
 
@@ -43,8 +42,8 @@ Al analizar las estadisticas se detectan algunos posibles valores outliers en CH
 Lo que deberemos hacer es en un principio es randomizar el orden de los datos (así cuando separemos las dos particiones, éstas serán estadísticamente similares).
 
 Luego separaremos el dataset en un conjunto para entrenamiento y otro conjunto “no visto” de prueba. Para esto se usara el bloque Filter Examples de RapidMiner.
-![process1](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/process1.png?raw=true)
-![processvalidation](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/processvalidation.png?raw=true)
+![process1](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/process1.png?raw=true)
+![processvalidation](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/processvalidation.png?raw=true)
 
 # Regresión Lineal
 
@@ -71,21 +70,21 @@ Use bias determina si tiene que calcular o no un parámetro independiente o inte
 
 Sin feature selection: ZN,INDUS,NOX y AGE parecen no ser significativos.
 squared_correlation (R2): 0.758
-![SalidaLinearRegression](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/SalidaLinearRegression.png?raw=true)
+![SalidaLinearRegression](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/SalidaLinearRegression.png?raw=true)
 
 Con feature selection: Al aplicar Greedy se eliminan los que parecían no ser significativos.
 squared_correlation(R2): 0.752
 
-![Greedy](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/Greedy.png?raw=true)
+![Greedy](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/Greedy.png?raw=true)
 
 # Aplicación sobre datos “no vistos”
 
-![process2](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/process2.png?raw=true)
+![process2](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/process2.png?raw=true)
 
 Al mirar las estadisticas de residuals podemos decir que se esta logrando identificar de manera casi correcta la variable objetivo.
 
-![residuals](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/residuals.png?raw=true)
+![residuals](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/residuals.png?raw=true)
 
 # Archivos
 
--[UT3_TA2.rmp](https://github.com/gcabrera243/blob/main/content/UT3/TAs/TA2/UT3_TA2.rmp)
+-[UT3_TA2.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/UT3_TA2.rmp)

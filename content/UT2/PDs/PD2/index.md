@@ -30,8 +30,8 @@ Aprendemos a usar el ROC Curves.
 
 ## Archivos
 
--   [Modeling.rmp](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD3/Modeling.rmp?raw=true)
--   [Scoring.rmp](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD3/Scoring.rmp?raw=true)
--   [TestSplitsandValidation.rmp](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD3/TestSplitsandValidation.rmp?raw=true)
--   [CrossValidation.rmp](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD3/CrossValidation.rmp?raw=true)
--   [VisualModelComparison.rmp](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD3/VisualModelComparison.rmp?raw=true)
+-   [Modeling.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/Modeling.rmp?raw=true)
+-   [Scoring.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/Scoring.rmp?raw=true)
+-   [TestSplitsandValidation.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/TestSplitsandValidation.rmp?raw=true)
+-   [CrossValidation.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/CrossValidation.rmp?raw=true)
+-   [VisualModelComparison.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/VisualModelComparison.rmp?raw=true)

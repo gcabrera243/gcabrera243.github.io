@@ -9,4 +9,4 @@ Python y sklearn.
 
 ## Codigo implementado
 
--   [codigo](https://github.com/gcabrera243/blob/main/content/UT2/PDs/PD4/UT2_PD4.ipynb?raw=true)
+-   [codigo](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/UT2_PD4.ipynb?raw=true)
