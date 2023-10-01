@@ -6,9 +6,9 @@ tags: 'TAs','TA2','UT3'
 
 Los objetivos de este Trabajo de Aplicación son:
 
-    1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana
-
-de precios de una casa 2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes 3. Evaluar la exactitud del modelo para predecir nuevos ejemplos
+1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana de precios de una casa 
+2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes 
+3. Evaluar la exactitud del modelo para predecir nuevos ejemplos
 
 # Problema
 
