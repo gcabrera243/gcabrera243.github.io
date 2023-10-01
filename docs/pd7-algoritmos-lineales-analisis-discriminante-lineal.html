@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>PD7 - Algoritmos Lineales - Análisis Discriminante Lineal</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="El siguiente ejercicio es un tutorial para realizar clasificación a partir de un conjunto de datos, usando Análisis Discriminante Lineal y la..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Portafolio IA</a></h1>
+                <nav><ul>
+                    <li><a href="/category/ut2.html">UT2</a></li>
+                    <li class="active"><a href="/category/ut3.html">UT3</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/pd7-algoritmos-lineales-analisis-discriminante-lineal.html" rel="bookmark"
+           title="Permalink to PD7 - Algoritmos Lineales - Análisis Discriminante Lineal">PD7 - Algoritmos Lineales - Análisis Discriminante Lineal</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-09-03T10:20:00+02:00">
+                Published: Sun 03 September 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+        </address>
+<p>In <a href="/category/ut3.html">UT3</a>.</p>
+<p>tags: <a href="/tag/pds.html">&#39;PDs&#39;</a> <a href="/tag/ut3.html">&#39;UT3&#39;</a> <a href="/tag/pd7.html">&#39;PD7&#39;</a> </p>
+</footer><!-- /.post-info -->      <p>El siguiente ejercicio es un tutorial para realizar clasificación a partir de un conjunto de datos, usando
+Análisis Discriminante Lineal y la librería scikit-learn de Python.</p>
+<h1>Proceso</h1>
+<p>Para comenzar deberemos importar las siguientes librerias:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="kn">import</span> <span class="n">LinearDiscriminantAnalysis</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+</code></pre></div>
+
+<p>Luego cargaremos el archivo de datos 'sample.csv' y mostraremos sus valores.
+Para esto utilizaremos el codigo:</p>
+<div class="highlight"><pre><span></span><code>input_file = &quot;sample.csv&quot;
+df = pd.read_csv(input_file, header=0)
+print(df.values)
+</code></pre></div>
+
+<p><img alt="Valores" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/PDs/PD7/Valores.png?raw=true"></p>
+<p>Podemos graficar los datos utilizando la librería.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">(</span><span class="s2">&quot;orange&quot;</span>,<span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="ss">)</span>
+<span class="nv">plt</span>.<span class="nv">scatter</span><span class="ss">(</span><span class="nv">df</span>[<span class="s1">&#39;x&#39;</span>],<span class="w"> </span><span class="nv">df</span>[<span class="s1">&#39;y&#39;</span>],<span class="w"> </span><span class="nv">s</span><span class="o">=</span><span class="mi">300</span>,<span class="w"> </span><span class="nv">c</span><span class="o">=</span><span class="nv">df</span>[<span class="s1">&#39;label&#39;</span>],
+<span class="nv">cmap</span><span class="o">=</span><span class="nv">matplotlib</span>.<span class="nv">colors</span>.<span class="nv">ListedColormap</span><span class="ss">(</span><span class="nv">colors</span><span class="ss">))</span>
+<span class="nv">plt</span>.<span class="k">show</span><span class="ss">()</span>
+</code></pre></div>
+
+<p><img alt="Grafica" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/PDs/PD7/Grafica.png?raw=true"></p>
+<p>A continuación Obtenemos a partir del dataset los datos y las clases.
+Dividimos el conjunto de datos en 2, uno para entrenamiento y otro para prueba</p>
+<div class="highlight"><pre><span></span><code>X = df[[&#39;x&#39;, &#39;y&#39;]].values
+y = df[&#39;label&#39;].values
+train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.25,random_state=0, shuffle=True)
+</code></pre></div>
+
+<p>Creamos el modelo de LDA y lo entrenamos.</p>
+<div class="highlight"><pre><span></span><code>lda = LinearDiscriminantAnalysis()
+lda = lda.fit(train_X, train_y)
+</code></pre></div>
+
+<h2>Evaluación</h2>
+<p>Ahora podemos predecir las clases para los datos del conjunto de prueba y ver los resultados.
+    y_pred = lda.predict(test_X)
+    print("Predicted vs Expected")
+    print(y_pred)
+    print(test_y)</p>
+<p><img alt="PredictedVsExpected" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/PDs/PD7/PredictedVsExpected.png?raw=true"></p>
+<p>Reporte: 
+<img alt="Report" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/PDs/PD7/Report.png?raw=true"></p>
+<p>Matriz de confusion:</p>
+<p><img alt="Matrix" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/PDs/PD7/Matrix.png?raw=true"></p>
+<h1>Archivos</h1>
+<ul>
+<li><a href="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT3/PDs/PD7/UT3_TA7PD.ipynb">UT3_TA7PD.ipynb</a></li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

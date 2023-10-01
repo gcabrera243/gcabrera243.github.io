@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>TA3 - Procesamiento previo de los datos - Telephone</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Portafolio IA</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/ut2.html">UT2</a></li>
+                    <li><a href="/category/ut3.html">UT3</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ta3-procesamiento-previo-de-los-datos-telephone.html" rel="bookmark"
+           title="Permalink to TA3 - Procesamiento previo de los datos - Telephone">TA3 - Procesamiento previo de los datos - Telephone</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-09-03T10:20:00+02:00">
+                Published: Sun 03 September 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+        </address>
+<p>In <a href="/category/ut2.html">UT2</a>.</p>
+<p>tags: <a href="/tag/tas.html">[&#39;TAs&#39;]</a> </p>
+</footer><!-- /.post-info -->      <p>En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos en RapidMiner.</p>
+<h1>Telephone</h1>
+<p>Se trata de un conjunto de datos de llamadas telefónicas internacionales realizadas desde Bélgica de 1950 a 1973.Estos datos se obtienen de la Encuesta Estadística Belga publicada por el Ministerio de Economía. </p>
+<p>El gráfico parece mostrar una tendencia ascendente a lo largo de los años, pero hay un grupo anómalo de puntos desde 1964 hasta 1969. Esto se debe a que los resultados se registraron erróneamente en el número total de minutos de las llamadas. Los años 1963 y 1970 también se ven parcialmente afectados. Este error provoca una gran cantidad de valores atípicos.</p>
+<p>Para estos valores lo que podemos hacer es usar un bloque de deteccion de outliers por distancia por ejemplo.</p>
+<h2>Iris</h2>
+<p>Predecir la especie de una flor de iris en función de cuatro atributos relacionados con las dimensiones de sus sépalos y pétalos. Se trata de un problema de clasificacion.</p>
+<p>Se cuenta con 4 atributos numéricos para predecir la especie de iris:</p>
+<p>sepal_length: Longitud del sépalo en centímetros.
+sepal_width: Ancho del sépalo en centímetros.
+petal_length: Longitud del pétalo en centímetros.
+petal_width: Ancho del pétalo en centímetros.</p>
+<p><img alt="estadisticas_iris" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA3/estadisticas_iris.png?raw=true"></p>
+<p>La variable objetivo es iris y puede tomar los valores "Iris setosa," "Iris versicolor," y "Iris virginica."</p>
+<p>Al aplicar deteccion de outliers por distancia detectamos 10 outliers.</p>
+<p>Al hacer la grafica podemos ver que hay 3 zonas claramente diferenciadas, representadas en los colores azul, verde y naranja. sin embargo las zonas verde y naranja tienen una parte de su área solapada, lo que dificultaría la clasificación.</p>
+<p>También se puede notar una correlación bastante fuerte entre la longitud del pétalo y su ancho.
+dos.
+<img alt="scatter_plot" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA3/scatter_plot.png?raw=true"></p>
+<h2>Archivos</h2>
+<ul>
+<li><a href="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA3/iris.rmp?raw=true">iris.rmp</a></li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

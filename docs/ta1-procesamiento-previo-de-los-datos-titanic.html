@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>TA1 - Procesamiento previo de los datos - Titanic</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="En este articulo, investigaremos el dataset de titanic. Problema Se busca predecir dado los datos que se conocen antes de embarcar, si la persona..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Portafolio IA</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/ut2.html">UT2</a></li>
+                    <li><a href="/category/ut3.html">UT3</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ta1-procesamiento-previo-de-los-datos-titanic.html" rel="bookmark"
+           title="Permalink to TA1 - Procesamiento previo de los datos - Titanic">TA1 - Procesamiento previo de los datos - Titanic</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-09-03T10:20:00+02:00">
+                Published: Sun 03 September 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+        </address>
+<p>In <a href="/category/ut2.html">UT2</a>.</p>
+<p>tags: <a href="/tag/tas.html">[&#39;TAs&#39;]</a> </p>
+</footer><!-- /.post-info -->      <p>En este articulo, investigaremos el dataset de titanic.</p>
+<h1>Problema</h1>
+<p>Se busca predecir dado los datos que se conocen antes de embarcar, si la persona embarcada sobrevivirá o no.</p>
+<h1>Atributos</h1>
+<p>Clase Objetivo
+survived - Supervivencia (0 = No; 1 = Sí)</p>
+<p>Atributos
+pclass - Clase de Pasajero (1 = 1ra; 2 = 2da; 3 = 3ra)
+name - Nombre
+sex - Género
+age - Edad
+sibsp - Número de Hermanos/Cónyuges a Bordo
+parch - Número de Padres/Hijos a Bordo
+ticket - Número de Boleto
+fare - Tarifa del Pasajero
+cabin - Cabina
+embarked - Puerto de Embarque (C = Cherbourg; Q = Queenstown; S = Southampton)
+boat - Bote Salvavidas (si sobrevivió)
+body - Número de Cuerpo (si no sobrevivió y el cuerpo fue recuperado)</p>
+<p><img alt="atributos" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/Atributos.png?raw=true"></p>
+<p>De estas estadísticas se puede ver que faltan:</p>
+<ul>
+<li>264 Edades</li>
+<li>2 Tarifa del Pasajero</li>
+<li>1015 Cabinas</li>
+<li>3 Puertos de embarque</li>
+<li>824 botes salvavidas
+entre otros</li>
+</ul>
+<h1>Tratamiento de los datos</h1>
+<p>El bote salvavidas y el numero de cuerpo no son atributos que nos sirvan porque no contamos con esta informacion a la hora de embarcar.
+Cabinas tampoco nos sirve porque tiene muchisimos valores faltantes 1015 de 1310 posibles.
+Para los datos faltantes lo que se hizo fue reemplazarlos utilizando el promedio.
+Luego se normalizan todos los datos.</p>
+<h1>Correlaciones</h1>
+<p>Modelando el problema obtenemos la siguiente matriz de correlacion.
+<img alt="CorrelationMatrix" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/CorrelationMatrix.png?raw=true"></p>
+<p>y los pesos son</p>
+<p><img alt="Weights" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/Weights.png?raw=true"></p>
+<h2>Archivos</h2>
+<p>A continuacion se deja el proceso de RapidMiner</p>
+<ul>
+<li><a href="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/TA1.rmp?raw=true">TA1</a></li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
