@@ -1,42 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>TA3 - Procesamiento previo de los datos - Telephone</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content="En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos..." />
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Portafolio IA</a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/category/ut2.html">UT2</a></li>
-                    <li><a href="/category/ut3.html">UT3</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/ta3-procesamiento-previo-de-los-datos-telephone.html" rel="bookmark"
-           title="Permalink to TA3 - Procesamiento previo de los datos - Telephone">TA3 - Procesamiento previo de los datos - Telephone</a></h1>
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>TA3 - Procesamiento previo de los datos - Telephone</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/ta3-procesamiento-previo-de-los-datos-telephone.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Custom fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo...">
+
+    <meta name="author" content="Gaston Cabrera">
+
+    <meta name="tags" content="['TAs']">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Portafolio IA"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="TA3 - Procesamiento previo de los datos - Telephone"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/ta3-procesamiento-previo-de-los-datos-telephone.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2023-09-03 10:20:00+02:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/gaston-cabrera.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="UT2"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="['TAs']"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "TA3 - Procesamiento previo de los datos - Telephone",
+  "headline": "TA3 - Procesamiento previo de los datos - Telephone",
+  "datePublished": "2023-09-03 10:20:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Gaston Cabrera",
+    "url": "/author/gaston-cabrera.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/ta3-procesamiento-previo-de-los-datos-telephone.html",
+  "description": "En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" aria-label="Home" title="Home">
+                  <i class="ic ic-arrow-left" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button" aria-label="Menu">
+              <i class="ic ic-menu" aria-hidden="true"></i>
+              <span>Menu</span>
+            </a>
+          </span>
+        </nav>
+        <h1 class="post-title">TA3 - Procesamiento previo de los datos - Telephone</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+            | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+        </span>
+      </div>
     </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-09-03T10:20:00+02:00">
-                Published: Sun 03 September 2023
-        </abbr>
+  <section id="wrapper">
+    <a class="hidden-close"></a>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
-        </address>
-<p>In <a href="/category/ut2.html">UT2</a>.</p>
-<p>tags: <a href="/tag/tas.html">[&#39;TAs&#39;]</a> </p>
-</footer><!-- /.post-info -->      <p>En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos en RapidMiner.</p>
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos en RapidMiner.</p>
 <h1>Telephone</h1>
 <p>Se trata de un conjunto de datos de llamadas telefónicas internacionales realizadas desde Bélgica de 1950 a 1973.Estos datos se obtienen de la Encuesta Estadística Belga publicada por el Ministerio de Economía. </p>
 <p>El gráfico parece mostrar una tendencia ascendente a lo largo de los años, pero hay un grupo anómalo de puntos desde 1964 hasta 1969. Esto se debe a que los resultados se registraron erróneamente en el número total de minutos de las llamadas. Los años 1963 y 1970 también se ven parcialmente afectados. Este error provoca una gran cantidad de valores atípicos.</p>
@@ -59,37 +153,59 @@ dos.
 <ul>
 <li><a href="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA3/iris.rmp?raw=true">iris.rmp</a></li>
 </ul>
-    </div><!-- /.entry-content -->
+            </section>
 
-  </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                            <li><a href="https://www.python.org/">Python.org</a></li>
-                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+            <section class="post-info">
+                <div class="post-share">
+                    <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=TA3 - Procesamiento previo de los datos - Telephone&amp;url=/ta3-procesamiento-previo-de-los-datos-telephone.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                      <i class="ic ic-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/ta3-procesamiento-previo-de-los-datos-telephone.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                      <i class="ic ic-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/ta3-procesamiento-previo-de-los-datos-telephone.html&amp;title=TA3 - Procesamiento previo de los datos - Telephone" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                      <i class="ic ic-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+                    </a>
+                    <a title="Email" aria-label="Email" class="email" href="mailto:?subject=TA3 - Procesamiento previo de los datos - Telephone&amp;body=/ta3-procesamiento-previo-de-los-datos-telephone.html">
+                      <i class="ic ic-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+                <aside class="post-tags">
+<a href="/tag/tas.html">[&#39;TAs&#39;]</a>                </aside>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
+                <div class="clear"></div>
 
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
 
 </body>
 </html>

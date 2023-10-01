@@ -1,188 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>Portafolio IA - ['TAs']</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Portafolio IA - Tag ['TAs']</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/tag/tas.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Custom fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
+<!-- TODO : Body class -->
+<body class="home-template">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Portafolio IA</a></h1>
-                <nav><ul>
-                    <li><a href="/category/ut2.html">UT2</a></li>
-                    <li><a href="/category/ut3.html">UT3</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/ta1-procesamiento-previo-de-los-datos-titanic.html">TA1 - Procesamiento previo de los datos - Titanic</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2023-09-03T10:20:00+02:00">
-                Published: Sun 03 September 2023
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
-        </address>
-<p>In <a href="/category/ut2.html">UT2</a>.</p>
-<p>tags: <a href="/tag/tas.html">[&#39;TAs&#39;]</a> </p>
-</footer><!-- /.post-info --><p>En este articulo, investigaremos el dataset de titanic.</p>
-<h1>Problema</h1>
-<p>Se busca predecir dado los datos que se conocen antes de embarcar, si la persona embarcada sobrevivirá o no.</p>
-<h1>Atributos</h1>
-<p>Clase Objetivo
-survived - Supervivencia (0 = No; 1 = Sí)</p>
-<p>Atributos
-pclass - Clase de Pasajero (1 = 1ra; 2 = 2da; 3 = 3ra)
-name - Nombre
-sex - Género
-age - Edad
-sibsp - Número de Hermanos/Cónyuges a Bordo
-parch - Número de Padres/Hijos a Bordo
-ticket - Número de Boleto
-fare - Tarifa del Pasajero
-cabin - Cabina
-embarked - Puerto de Embarque (C = Cherbourg; Q = Queenstown; S = Southampton)
-boat - Bote Salvavidas (si sobrevivió)
-body - Número de Cuerpo (si no sobrevivió y el cuerpo fue recuperado)</p>
-<p><img alt="atributos" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/Atributos.png?raw=true"></p>
-<p>De estas estadísticas se puede ver que faltan:</p>
-<ul>
-<li>264 Edades</li>
-<li>2 Tarifa del Pasajero</li>
-<li>1015 Cabinas</li>
-<li>3 Puertos de embarque</li>
-<li>824 botes salvavidas
-entre otros</li>
-</ul>
-<h1>Tratamiento de los datos</h1>
-<p>El bote salvavidas y el numero de cuerpo no son atributos que nos sirvan porque no contamos con esta informacion a la hora de embarcar.
-Cabinas tampoco nos sirve porque tiene muchisimos valores faltantes 1015 de 1310 posibles.
-Para los datos faltantes lo que se hizo fue reemplazarlos utilizando el promedio.
-Luego se normalizan todos los datos.</p>
-<h1>Correlaciones</h1>
-<p>Modelando el problema obtenemos la siguiente matriz de correlacion.
-<img alt="CorrelationMatrix" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/CorrelationMatrix.png?raw=true"></p>
-<p>y los pesos son</p>
-<p><img alt="Weights" src="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/Weights.png?raw=true"></p>
-<h2>Archivos</h2>
-<p>A continuacion se deja el proceso de RapidMiner</p>
-<ul>
-<li><a href="https://github.com/gcabrera243/portafolioIA/blob/main/content/UT2/TAs/TA1/TA1.rmp?raw=true">TA1</a></li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+    </ul>
+  </div>
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" aria-label="Home" title="Home">
+                  <i class="ic ic-arrow-left" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button" aria-label="Menu">
+              <i class="ic ic-menu" aria-hidden="true"></i>
+              <span>Menu</span>
+            </a>
+          </span>
+        </nav>
+        <h1 class="post-title">Tag ['TAs']</h1>
+        <span class="blog-description">Posts: 4</span>
+      </div>
+    </header>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ta2-procesamiento-previo-de-los-datos-wine.html" rel="bookmark"
-                           title="Permalink to TA2 - Procesamiento previo de los datos - Wine">TA2 - Procesamiento previo de los datos - Wine</a></h1>
-                </header>
+  <section id="wrapper">
+    <a class="hidden-close"></a>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-09-03T10:20:00+02:00">
-                Published: Sun 03 September 2023
-        </abbr>
+<div id="index" class="container">
+  <main class="content" role="main">
+    <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+    </div>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
-        </address>
-<p>In <a href="/category/ut2.html">UT2</a>.</p>
-<p>tags: <a href="/tag/tas.html">[&#39;TAs&#39;]</a> </p>
-</footer><!-- /.post-info -->                <p>En este artículo, utilizaremos el conjunto de datos Wine de la UCI como ejemplo práctico para demostrar lo aprendido de normalizacion.</p>
-<h2>Problema</h2>
-<p>Problema planteado: Determinar la clase de vino a partir de sus concentraciones de varios nutrientes. Se trata de un problema de clasificacion donde vamos a tener 3 clases …</p>
-                <a class="readmore" href="/ta2-procesamiento-previo-de-los-datos-wine.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="/ta1-procesamiento-previo-de-los-datos-titanic.html" rel="bookmark" title="Permalink to TA1 - Procesamiento previo de los datos - Titanic">TA1 - Procesamiento previo de los datos - Titanic</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+                     | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        En este articulo, investigaremos el dataset de titanic. Problema Se busca predecir dado los datos que se conocen antes de embarcar, si la persona embarcada sobrevivirá o no. Atributos Clase Objetivo survived - Supervivencia (0 = No; 1 = Sí)...
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="/ta2-procesamiento-previo-de-los-datos-wine.html" rel="bookmark" title="Permalink to TA2 - Procesamiento previo de los datos - Wine">TA2 - Procesamiento previo de los datos - Wine</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+                     | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        En este artículo, utilizaremos el conjunto de datos Wine de la UCI como ejemplo práctico para demostrar lo aprendido de normalizacion. Problema Problema planteado: Determinar la clase de vino a partir de sus concentraciones de varios nutrientes....
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="/ta3-procesamiento-previo-de-los-datos-telephone.html" rel="bookmark" title="Permalink to TA3 - Procesamiento previo de los datos - Telephone">TA3 - Procesamiento previo de los datos - Telephone</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+                     | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos en RapidMiner. Telephone Se trata de un conjunto de datos de llamadas telefónicas internacionales...
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="/ta4-algoritmos-lineales-implementacion-en-python.html" rel="bookmark" title="Permalink to TA4 - Algoritmos Lineales - Implementación en Python">TA4 - Algoritmos Lineales - Implementación en Python</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+                     | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression class LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator): En el caso multiclase, el algoritmo de entrenamiento utiliza uno contra...
+                    </p>
+                </section>
+            </div>
+        </article>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ta3-procesamiento-previo-de-los-datos-telephone.html" rel="bookmark"
-                           title="Permalink to TA3 - Procesamiento previo de los datos - Telephone">TA3 - Procesamiento previo de los datos - Telephone</a></h1>
-                </header>
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+  </main>
+</div>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-09-03T10:20:00+02:00">
-                Published: Sun 03 September 2023
-        </abbr>
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
-        </address>
-<p>In <a href="/category/ut2.html">UT2</a>.</p>
-<p>tags: <a href="/tag/tas.html">[&#39;TAs&#39;]</a> </p>
-</footer><!-- /.post-info -->                <p>En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos en RapidMiner.</p>
-<h1>Telephone</h1>
-<p>Se trata de un conjunto de datos de llamadas telefónicas internacionales realizadas desde Bélgica de 1950 a 1973.Estos datos se obtienen de la …</p>
-                <a class="readmore" href="/ta3-procesamiento-previo-de-los-datos-telephone.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ta4-algoritmos-lineales-implementacion-en-python.html" rel="bookmark"
-                           title="Permalink to TA4 - Algoritmos Lineales - Implementación en Python">TA4 - Algoritmos Lineales - Implementación en Python</a></h1>
-                </header>
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2023-09-03T10:20:00+02:00">
-                Published: Sun 03 September 2023
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/gaston-cabrera.html">Gaston Cabrera</a>
-        </address>
-<p>In <a href="/category/ut3.html">UT3</a>.</p>
-<p>tags: <a href="/tag/tas.html">&#39;TAs&#39;</a> <a href="/tag/ut3.html">&#39;UT3&#39;</a> <a href="/tag/ta4.html">&#39;TA4&#39;</a> </p>
-</footer><!-- /.post-info -->                <p>El objetivo es entender como utilizar regresion logistica en python.</p>
-<h2>Logisitic Regression</h2>
-<p>class LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):</p>
-<p>En el caso multiclase, el algoritmo de entrenamiento utiliza uno contra resto (OvR)</p>
-<p>esquema si la opción 'multi_class' está configurada en 'ovr' y utiliza la Pérdida de entropía</p>
-<p>cruzada si la opción 'multi_class' …</p>
-                <a class="readmore" href="/ta4-algoritmos-lineales-implementacion-en-python.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                            <li><a href="https://www.python.org/">Python.org</a></li>
-                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
 
 </body>
 </html>
