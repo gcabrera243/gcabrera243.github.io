@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Caso de Estudio - Ames Housing</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/caso-de-estudio-ames-housing.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Custom fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Objetivo El objetivo principal al utilizar este conjunto de datos es predecir el precio de venta de una vivienda en Ames en función de...">
+
+    <meta name="author" content="Gaston Cabrera">
+
+    <meta name="tags" content="'Casos de Estudio'">
+    <meta name="tags" content="'Analisis de Datos'">
+    <meta name="tags" content="'Python'">
+    <meta name="tags" content="'RapidMiner'">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Portafolio IA"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Caso de Estudio - Ames Housing"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="Objetivo El objetivo principal al utilizar este conjunto de datos es predecir el precio de venta de una vivienda en Ames en función de..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/caso-de-estudio-ames-housing.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2023-10-14 10:20:00+02:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/gaston-cabrera.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="CasosdeEstudio"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Casos de Estudio'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Analisis de Datos'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Python'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'RapidMiner'"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Caso de Estudio - Ames Housing",
+  "headline": "Caso de Estudio - Ames Housing",
+  "datePublished": "2023-10-14 10:20:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Gaston Cabrera",
+    "url": "/author/gaston-cabrera.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/caso-de-estudio-ames-housing.html",
+  "description": "Objetivo El objetivo principal al utilizar este conjunto de datos es predecir el precio de venta de una vivienda en Ames en función de..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+          <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="category/CasosdeEstudio" role="presentation">Casos de Estudio</a></li>
+          <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
+          <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
+          <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
+          <li><a href="/category/ut4.html" role="presentation">UT4</a></li>
+          <li><a href="/category/ut5.html" role="presentation">UT5</a></li>
+          <li><a href="/category/ut6.html" role="presentation">UT6</a></li>
+          <li><a href="/category/ut7.html" role="presentation">UT7</a></li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" aria-label="Home" title="Home">
+                  <i class="ic ic-arrow-left" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button" aria-label="Menu">
+              <i class="ic ic-menu" aria-hidden="true"></i>
+              <span>Menu</span>
+            </a>
+          </span>
+        </nav>
+        <h1 class="post-title">Caso de Estudio - Ames Housing</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+            | <time datetime="Sat 14 October 2023">Sat 14 October 2023</time>
+        </span>
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <h1>Objetivo</h1>
+<p>El objetivo principal al utilizar este conjunto de datos es predecir el precio de venta de una vivienda en Ames en función de ciertas características dadas.
+Esto es un problema típico de regresión, donde lo que se busca es encontrar una relación entre las características de entrada y el precio de venta de la casa.</p>
+<h1>Entendimiento de los datos</h1>
+<p>En este dataset contamos con datos de venta de propiedades en Ames entre los años 2006 y 2010.</p>
+<p>Los datos estan dividos en dos datasets, uno de training y uno de test.</p>
+<h2>Variables</h2>
+<p>Se cuenta con 80 variables (23 nominales, 23 ordinales, 14 discretas, 20 continuas) las cuales son:</p>
+<ul>
+<li>
+<p><strong>Id</strong>: Identificador de la casa vendida.</p>
+</li>
+<li>
+<p><strong>MSSubClass</strong>: Identifica el tipo de vivienda involucrada en la venta.</p>
+<ul>
+<li>20: 1 planta 1946 y más nuevas, todos los estilos.</li>
+<li>30: 1 planta 1945 y más antiguas.</li>
+<li>40: 1 planta con ático terminado de todas las edades.</li>
+<li>45: 1-1/2 plantas sin terminar de todas las edades.</li>
+<li>50: 1-1/2 plantas terminadas de todas las edades.</li>
+<li>60: 2 plantas 1946 y más nuevas.</li>
+<li>70: 2 plantas 1945 y más antiguas.</li>
+<li>75: 2-1/2 plantas de todas las edades.</li>
+<li>80: División o nivel múltiple.</li>
+<li>85: Vestíbulo dividido.</li>
+<li>90: Dúplex - Todos los estilos y edades.</li>
+<li>120: 1 planta PUD (Desarrollo de Unidad Planificada) - 1946 y más nuevas.</li>
+<li>150: 1-1/2 plantas PUD - Todas las edades.</li>
+<li>160: 2 plantas PUD - 1946 y más nuevas.</li>
+<li>180: PUD - Multinivel, incluye nivel dividido/vestíbulo.</li>
+<li>190: Conversión de 2 familias - Todos los estilos y edades.</li>
+</ul>
+</li>
+<li>
+<p><strong>MSZoning</strong>: Identifica la clasificación de zonificación general de la venta.</p>
+<ul>
+<li>A: Agricultura.</li>
+<li>C: Comercial.</li>
+<li>FV: Zona residencial en aldea flotante.</li>
+<li>I: Industrial.</li>
+<li>RH: Densidad residencial alta.</li>
+<li>RL: Densidad residencial baja.</li>
+<li>RP: Densidad residencial baja, parque.</li>
+<li>RM: Densidad residencial media.</li>
+</ul>
+</li>
+<li>
+<p><strong>LotFrontage</strong>: Longitud en pies lineales de la calle conectada a la propiedad.</p>
+</li>
+<li>
+<p><strong>LotArea</strong>: Tamaño del lote en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>Street</strong>: Tipo de acceso a la propiedad.</p>
+<ul>
+<li>Grvl: Grava.</li>
+<li>Pave: Pavimentado.</li>
+</ul>
+</li>
+<li>
+<p><strong>Alley</strong>: Tipo de acceso al callejón a la propiedad.</p>
+<ul>
+<li>Grvl: Grava.</li>
+<li>Pave: Pavimentado.</li>
+<li>NA: Sin acceso al callejón.</li>
+</ul>
+</li>
+<li>
+<p><strong>LotShape</strong>: Forma general de la propiedad.</p>
+<ul>
+<li>Reg: Regular.</li>
+<li>IR1: Ligeramente irregular.</li>
+<li>IR2: Moderadamente irregular.</li>
+<li>IR3: Irregular.</li>
+</ul>
+</li>
+<li>
+<p><strong>LandContour</strong>: Plenitud de la propiedad.</p>
+<ul>
+<li>Lvl: Casi plano/nivel.</li>
+<li>Bnk: Pendiente rápida y significativa desde el nivel de la calle hasta el edificio.</li>
+<li>HLS: Ladera: Pendiente significativa de lado a lado.</li>
+<li>Low: Depresión.</li>
+</ul>
+</li>
+<li>
+<p><strong>Utilities</strong>: Tipo de servicios públicos disponibles.</p>
+<ul>
+<li>AllPub: Todos los servicios públicos (Electricidad, Gas, Agua y Alcantarillado).</li>
+<li>NoSewr: Electricidad, Gas y Agua (Fosa séptica).</li>
+<li>NoSeWa: Solo Electricidad y Gas.</li>
+<li>ELO: Solo Electricidad.</li>
+</ul>
+</li>
+<li>
+<p><strong>LotConfig</strong>: Configuración del lote.</p>
+<ul>
+<li>Inside: Lote interior.</li>
+<li>Corner: Lote en esquina.</li>
+<li>CulDSac: Cul-de-sac.</li>
+<li>FR2: Frente en 2 lados de la propiedad.</li>
+<li>FR3: Frente en 3 lados de la propiedad.</li>
+</ul>
+</li>
+<li>
+<p><strong>LandSlope</strong>: Pendiente de la propiedad.</p>
+<ul>
+<li>Gtl: Pendiente suave.</li>
+<li>Mod: Pendiente moderada.</li>
+<li>Sev: Pendiente severa.</li>
+</ul>
+</li>
+<li>
+<p><strong>Neighborhood</strong>: Ubicación física dentro de los límites de la ciudad de Ames.</p>
+<ul>
+<li>Blmngtn Bloomington Heights</li>
+<li>Blueste Bluestem</li>
+<li>BrDale Briardale</li>
+<li>BrkSide Brookside</li>
+<li>ClearCr Clear Creek</li>
+<li>CollgCr College Creek</li>
+<li>Crawfor Crawford</li>
+<li>Edwards Edwards</li>
+<li>Gilbert Gilbert</li>
+<li>IDOTRR Iowa DOT and Rail Road</li>
+<li>MeadowV Meadow Village</li>
+<li>Mitchel Mitchell</li>
+<li>Names North Ames</li>
+<li>NoRidge Northridge</li>
+<li>NPkVill Northpark Villa</li>
+<li>NridgHt Northridge Heights</li>
+<li>NWAmes Northwest Ames</li>
+<li>OldTown Old Town</li>
+<li>SWISU South &amp; West of Iowa State University</li>
+<li>Sawyer Sawyer</li>
+<li>SawyerW Sawyer West</li>
+<li>Somerst Somerset</li>
+<li>StoneBr Stone Brook</li>
+<li>Timber Timberland</li>
+<li>Veenker Veenker</li>
+</ul>
+</li>
+<li>
+<p><strong>Condition1</strong>: Proximidad a varias condiciones.</p>
+<ul>
+<li>Artery Adyacente a una calle principal.</li>
+<li>Feedr Adyacente a una calle secundaria.</li>
+<li>Norm Normal</li>
+<li>RRNn A menos de 200 pies del ferrocarril norte-sur.</li>
+<li>RRAn Adyacente al ferrocarril norte-sur.</li>
+<li>PosN Cerca de una característica fuera del sitio positiva, como un parque o cinturón verde.</li>
+<li>PosA Adyacente a una característica fuera del sitio positiva.</li>
+<li>RRNe A menos de 200 pies del ferrocarril este-oeste.</li>
+<li>RRAe Adyacente al ferrocarril este-oeste.</li>
+</ul>
+</li>
+<li>
+<p><strong>Condition2</strong>: Proximidad a varias condiciones (si más de una está presente).</p>
+<ul>
+<li>Artery Adyacente a una calle principal.</li>
+<li>Feedr Adyacente a una calle secundaria.</li>
+<li>Norm Normal</li>
+<li>RRNn A menos de 200 pies del ferrocarril norte-sur.</li>
+<li>RRAn Adyacente al ferrocarril norte-sur.</li>
+<li>PosN Cerca de una característica fuera del sitio positiva, como un parque o cinturón verde.</li>
+<li>PosA Adyacente a una característica fuera del sitio positiva.</li>
+<li>RRNe A menos de 200 pies del ferrocarril este-oeste.</li>
+<li>RRAe Adyacente al ferrocarril este-oeste.</li>
+</ul>
+</li>
+<li>
+<p><strong>BldgType</strong>: Tipo de vivienda.</p>
+<ul>
+<li>1Fam: Unifamiliar.</li>
+<li>2FmCon: Conversión de dos familias; originalmente construida como vivienda unifamiliar.</li>
+<li>Duplx: Dúplex.</li>
+<li>TwnhsE: Unidad de esquina de casa adosada.</li>
+<li>TwnhsI: Unidad interior de casa adosada.</li>
+</ul>
+</li>
+<li>
+<p><strong>HouseStyle</strong>: Estilo de vivienda.</p>
+<ul>
+<li>1Story: Una planta</li>
+<li>1.5Fin: Una planta y media: segundo nivel terminado</li>
+<li>1.5Unf: Una planta y media: segundo nivel sin terminar</li>
+<li>2Story: Dos plantas</li>
+<li>2.5Fin: Dos plantas y media: segundo nivel terminado</li>
+<li>2.5Unf: Dos plantas y media: segundo nivel sin terminar</li>
+<li>SFoyer: Vestíbulo dividido</li>
+<li>SLvl: Nivel dividido</li>
+</ul>
+</li>
+<li>
+<p><strong>OverallQual</strong>: Califica el material y el acabado general de la casa.</p>
+<ul>
+<li>10: Muy Excelente</li>
+<li>9: Excelente</li>
+<li>8: Muy Bueno</li>
+<li>7: Bueno</li>
+<li>6: Por Encima del Promedio</li>
+<li>5: Promedio</li>
+<li>4: Por Debajo del Promedio</li>
+<li>3: Regular</li>
+<li>2: Malo</li>
+<li>1: Muy Malo</li>
+</ul>
+</li>
+<li>
+<p><strong>OverallCond</strong>: Califica la condición general de la casa.</p>
+<ul>
+<li>10: Muy Excelente</li>
+<li>9: Excelente</li>
+<li>8: Muy Bueno</li>
+<li>7: Bueno</li>
+<li>6: Por Encima del Promedio</li>
+<li>5: Promedio</li>
+<li>4: Por Debajo del Promedio</li>
+<li>3: Regular</li>
+<li>2: Malo</li>
+<li>1: Muy Malo</li>
+</ul>
+</li>
+<li>
+<p><strong>YearBuilt</strong>: Fecha original de construcción.</p>
+</li>
+<li>
+<p><strong>YearRemodAdd</strong>: Fecha de remodelación (igual que la fecha de construcción si no hay remodelación ni adiciones).</p>
+</li>
+<li>
+<p><strong>RoofStyle</strong>: Tipo de techo.</p>
+<ul>
+<li>Flat: Plano</li>
+<li>Gable: A dos aguas</li>
+<li>Gambrel: Gambrel (Granero)</li>
+<li>Hip: A cuatro aguas</li>
+<li>Mansard: Mansarda</li>
+<li>Shed: Cobertizo</li>
+</ul>
+</li>
+<li>
+<p><strong>RoofMatl</strong>: Material del techo.</p>
+<ul>
+<li>ClyTile: Teja de Barro o Arcilla</li>
+<li>CompShg: Teja Estándar (Compuesta)</li>
+<li>Membran: Membrana</li>
+<li>Metal: Metal</li>
+<li>Roll: Rollos</li>
+<li>Tar&amp;Grv: Grava y Alquitrán</li>
+<li>WdShake: Tejas de Madera Rústica</li>
+<li>WdShngl: Tejas de Madera</li>
+</ul>
+</li>
+<li>
+<p><strong>Exterior1st</strong>: Revestimiento exterior de la casa.</p>
+<ul>
+<li>AsbShng: Tejas de Asbesto</li>
+<li>AsphShn: Tejas de Asfalto</li>
+<li>BrkComm: Ladrillo Común</li>
+<li>BrkFace: Ladrillo a la Vista</li>
+<li>CBlock: Bloque de Hormigón</li>
+<li>CemntBd: Tablero de Cemento</li>
+<li>HdBoard: Tablero Duro</li>
+<li>ImStucc: Estuco Imitación</li>
+<li>MetalSd: Revestimiento de Metal</li>
+<li>Other: Otro</li>
+<li>Plywood: Contrachapado</li>
+<li>PreCast: Hormigón Prefabricado</li>
+<li>Stone: Piedra</li>
+<li>Stucco: Estuco</li>
+<li>VinylSd: Revestimiento de Vinilo</li>
+<li>Wd Sdng: Revestimiento de Madera</li>
+<li>WdShing: Tejas de Madera</li>
+</ul>
+</li>
+<li>
+<p><strong>Exterior2nd</strong>: Revestimiento exterior de la casa (si hay más de un material).</p>
+<ul>
+<li>AsbShng: Tejas de Asbesto</li>
+<li>AsphShn: Tejas de Asfalto</li>
+<li>BrkComm: Ladrillo Común</li>
+<li>BrkFace: Ladrillo a la Vista</li>
+<li>CBlock: Bloque de Hormigón</li>
+<li>CemntBd: Tablero de Cemento</li>
+<li>HdBoard: Tablero Duro</li>
+<li>ImStucc: Estuco Imitación</li>
+<li>MetalSd: Revestimiento de Metal</li>
+<li>Other: Otro</li>
+<li>Plywood: Contrachapado</li>
+<li>PreCast: Hormigón Prefabricado</li>
+<li>Stone: Piedra</li>
+<li>Stucco: Estuco</li>
+<li>VinylSd: Revestimiento de Vinilo</li>
+<li>Wd Sdng: Revestimiento de Madera</li>
+<li>WdShing: Tejas de Madera</li>
+</ul>
+</li>
+<li>
+<p><strong>MasVnrType</strong>: Tipo de revestimiento de mampostería.</p>
+<ul>
+<li>BrkCmn: Ladrillo Común</li>
+<li>BrkFace: Ladrillo a la Vista</li>
+<li>CBlock: Bloque de Hormigón</li>
+<li>None: Ninguno</li>
+<li>Stone: Piedra</li>
+</ul>
+</li>
+<li>
+<p><strong>MasVnrArea</strong>: Área de revestimiento de mampostería en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>ExterQual</strong>: Evalúa la calidad del material en el exterior.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Promedio/Típico</li>
+<li>Fa: Regular</li>
+<li>Po: Malo</li>
+</ul>
+</li>
+<li>
+<p><strong>ExterCond</strong>: Evalúa la condición actual del material en el exterior.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Promedio/Típico</li>
+<li>Fa: Regular</li>
+<li>Po: Malo</li>
+</ul>
+</li>
+<li>
+<p><strong>Foundation</strong>: Tipo de cimiento.</p>
+<ul>
+<li>BrkTil: Ladrillo y Teja</li>
+<li>CBlock: Bloque de Hormigón</li>
+<li>PConc: Concreto Vertido</li>
+<li>Slab: Losa</li>
+<li>Stone: Piedra</li>
+<li>Wood: Madera</li>
+</ul>
+</li>
+<li>
+<p><strong>BsmtQual</strong>: Evalúa la altura del sótano.</p>
+<ul>
+<li>Ex: Excelente (más de 100 pulgadas)</li>
+<li>Gd: Bueno (90-99 pulgadas)</li>
+<li>TA: Típico (80-89 pulgadas)</li>
+<li>Fa: Regular (70-79 pulgadas)</li>
+<li>Po: Malo (menos de 70 pulgadas)</li>
+<li>NA: Sin Sótano</li>
+</ul>
+</li>
+<li>
+<p><strong>BsmtCond</strong>: Evalúa la condición general del sótano.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Típico - se permite una ligera humedad</li>
+<li>Fa: Regular - humedad o alguna grieta o asentamiento</li>
+<li>Po: Malo - grietas severas, asentamiento o humedad</li>
+<li>NA: Sin sótano</li>
+</ul>
+</li>
+<li>
+<p><strong>BsmtExposure</strong>: Se refiere a las paredes del nivel del sótano o del jardín.</p>
+<ul>
+<li>Gd: Buena Exposición</li>
+<li>Av: Exposición Promedio (niveles divididos o vestíbulos generalmente califican como promedio o mejor)</li>
+<li>Mn: Exposición Mínima</li>
+<li>No: Sin Exposición</li>
+<li>NA: Sin Sótano</li>
+</ul>
+</li>
+<li>
+<p><strong>BsmtFinType1</strong>: Clasificación del área terminada del sótano.</p>
+<ul>
+<li>GLQ: Buenas Áreas de Vivienda</li>
+<li>ALQ: Áreas de Vivienda Promedio</li>
+<li>BLQ: Áreas de Vivienda Inferiores al Promedio</li>
+<li>Rec: Sala de Entretenimiento Promedio</li>
+<li>LwQ: Baja Calidad</li>
+<li>Unf: Sin Terminar</li>
+<li>NA: Sin Sótano</li>
+</ul>
+</li>
+<li>
+<p><strong>BsmtFinSF1</strong>: Área cuadrada terminada de tipo 1.</p>
+</li>
+<li>
+<p><strong>BsmtFinType2</strong>: Clasificación del área terminada del sótano (si hay varios tipos).</p>
+<ul>
+<li>GLQ: Buenas Áreas de Vivienda</li>
+<li>ALQ: Áreas de Vivienda Promedio</li>
+<li>BLQ: Áreas de Vivienda Inferiores al Promedio</li>
+<li>Rec: Sala de Entretenimiento Promedio</li>
+<li>LwQ: Baja Calidad</li>
+<li>Unf: Sin Terminar</li>
+<li>NA: Sin Sótano</li>
+</ul>
+</li>
+<li>
+<p><strong>BsmtFinSF2</strong>: Área cuadrada terminada de tipo 2.</p>
+</li>
+<li>
+<p><strong>BsmtUnfSF</strong>: Área cuadrada sin terminar del sótano.</p>
+</li>
+<li>
+<p><strong>TotalBsmtSF</strong>: Área total en pies cuadrados del sótano.</p>
+</li>
+<li>
+<p><strong>Heating</strong>: Tipo de calefacción.</p>
+<ul>
+<li>Floor: Calefacción por Suelo Radiante</li>
+<li>GasA: Calefacción de Aire Forzado a Gas</li>
+<li>GasW: Calefacción de Agua Caliente o Vapor a Gas</li>
+<li>Grav: Calefacción por Gravedad</li>
+<li>OthW: Calefacción de Agua Caliente o Vapor, no a Gas</li>
+<li>Wall: Calefacción por Pared</li>
+</ul>
+</li>
+<li>
+<p><strong>HeatingQC</strong>: Calidad y condición de la calefacción.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Promedio/Típico</li>
+<li>Fa: Regular</li>
+<li>Po: Malo</li>
+</ul>
+</li>
+<li>
+<p><strong>CentralAir</strong>: Aire acondicionado central.</p>
+<ul>
+<li>N: No.</li>
+<li>Y: Sí.</li>
+</ul>
+</li>
+<li>
+<p><strong>Electrical</strong>: Sistema eléctrico.</p>
+<ul>
+<li>SBrkr: Interruptores de Circuito Estándar y Cableado Romex</li>
+<li>FuseA: Caja de Fusibles de más de 60 Amperios y cableado Romex (Promedio)</li>
+<li>FuseF: Caja de Fusibles de 60 Amperios y cableado principalmente Romex (Regular)</li>
+<li>FuseP: Caja de Fusibles de 60 Amperios y cableado principalmente en tubo flexible (Malo)</li>
+<li>Mix: Sistema Eléctrico Mixto</li>
+</ul>
+</li>
+<li>
+<p><strong>1stFlrSF</strong>: Pies cuadrados del primer piso.</p>
+</li>
+<li>
+<p><strong>2ndFlrSF</strong>: Pies cuadrados del segundo piso.</p>
+</li>
+<li>
+<p><strong>LowQualFinSF</strong>: Pies cuadrados terminados de baja calidad (en todos los pisos).</p>
+</li>
+<li>
+<p><strong>GrLivArea</strong>: Pies cuadrados de área de estar sobre el nivel del suelo.</p>
+</li>
+<li>
+<p><strong>BsmtFullBath</strong>: Baños completos en el sótano.</p>
+</li>
+<li>
+<p><strong>BsmtHalfBath</strong>: Medios baños en el sótano.</p>
+</li>
+<li>
+<p><strong>FullBath</strong>: Baños completos por encima del nivel del suelo.</p>
+</li>
+<li>
+<p><strong>HalfBath</strong>: Medios baños por encima del nivel del suelo.</p>
+</li>
+<li>
+<p><strong>Bedroom</strong>: Dormitorios por encima del nivel del suelo (no incluye dormitorios del sótano).</p>
+</li>
+<li>
+<p><strong>Kitchen</strong>: Cocinas por encima del nivel del suelo.</p>
+</li>
+<li>
+<p><strong>KitchenQual</strong>: Calidad de la cocina.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Promedio/Típico</li>
+<li>Fa: Regular</li>
+<li>Po: Malo</li>
+</ul>
+</li>
+<li>
+<p><strong>TotRmsAbvGrd</strong>: Total de habitaciones por encima del nivel del suelo (no incluye baños).</p>
+</li>
+<li>
+<p><strong>Functional</strong>: Funcionalidad de la casa (se asume típica a menos que se indiquen deducciones).</p>
+<ul>
+<li>Typ: Funcionalidad Típica</li>
+<li>Min1: Deducciones Menores 1</li>
+<li>Min2: Deducciones Menores 2</li>
+<li>Mod: Deducciones Moderadas</li>
+<li>Maj1: Deducciones Mayores 1</li>
+<li>Maj2: Deducciones Mayores 2</li>
+<li>Sev: Severamente Dañado</li>
+<li>Sal: Solo para Salvamento</li>
+</ul>
+</li>
+<li>
+<p><strong>Fireplaces</strong>: Número de chimeneas.</p>
+</li>
+<li>
+<p><strong>FireplaceQu</strong>: Calidad de la chimenea.</p>
+<ul>
+<li>Ex: Excelente - Chimenea de mampostería excepcional</li>
+<li>Gd: Bueno - Chimenea de mampostería en el nivel principal</li>
+<li>TA: Promedio - Chimenea prefabricada en la sala de estar principal o chimenea de mampostería en el sótano</li>
+<li>Fa: Regular - Chimenea prefabricada en el sótano</li>
+<li>Po: Malo - Estufa Ben Franklin</li>
+<li>NA: Sin Chimenea</li>
+</ul>
+</li>
+<li>
+<p><strong>GarageType</strong>: Ubicación del garaje.</p>
+<ul>
+<li>2Types: Más de un tipo de garaje</li>
+<li>Attchd: Adjunto a la casa</li>
+<li>Basment: Garaje en el Sótano</li>
+<li>BuiltIn: Integrado (parte de la casa, típicamente con espacio arriba del garaje)</li>
+<li>CarPort: Cochera</li>
+<li>Detchd: Separado de la casa</li>
+<li>NA: Sin Garaje</li>
+</ul>
+</li>
+<li>
+<p><strong>GarageYrBlt</strong>: Año de construcción del garaje.</p>
+</li>
+<li>
+<p><strong>GarageFinish</strong>: Acabado interior del garaje.</p>
+<ul>
+<li>Fin: Terminado</li>
+<li>RFn: Terminado de forma áspera</li>
+<li>Unf: Sin terminar</li>
+<li>NA: Sin garaje</li>
+</ul>
+</li>
+<li>
+<p><strong>GarageCars</strong>: Tamaño del garaje en capacidad de automóviles.</p>
+</li>
+<li>
+<p><strong>GarageArea</strong>: Tamaño del garaje en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>GarageQual</strong>: Calidad del garaje.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Típico/Normal</li>
+<li>Fa: Regular</li>
+<li>Po: Malo</li>
+<li>NA: Sin Garaje</li>
+</ul>
+</li>
+<li>
+<p><strong>GarageCond</strong>: Condición del garaje.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Típico/Normal</li>
+<li>Fa: Regular</li>
+<li>Po: Malo</li>
+<li>NA: Sin Garaje</li>
+</ul>
+</li>
+<li>
+<p><strong>PavedDrive</strong>: Entrada pavimentada.</p>
+<ul>
+<li>Y: Pavimentada.</li>
+<li>P: Pavimento parcial.</li>
+<li>N: Suciedad/grava.</li>
+</ul>
+</li>
+<li>
+<p><strong>WoodDeckSF</strong>: Área del deck de madera en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>OpenPorchSF</strong>: Área del porche abierto en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>EnclosedPorch</strong>: Área del porche cerrado en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>3SsnPorch</strong>: Área del porche de tres estaciones en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>ScreenPorch</strong>: Área del porche con pantalla en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>PoolArea</strong>: Área de la piscina en pies cuadrados.</p>
+</li>
+<li>
+<p><strong>PoolQC</strong>: Calidad de la piscina.</p>
+<ul>
+<li>Ex: Excelente</li>
+<li>Gd: Bueno</li>
+<li>TA: Promedio/Típico</li>
+<li>Fa: Regular</li>
+<li>NA: Sin Piscina</li>
+</ul>
+</li>
+<li>
+<p><strong>Fence</strong>: Calidad de la cerca.</p>
+<ul>
+<li>GdPrv: Buena Privacidad</li>
+<li>MnPrv: Mínima Privacidad</li>
+<li>GdWo: Buena Madera</li>
+<li>MnWw: Mínima Madera/Alambre</li>
+<li>NA: Sin Cerca</li>
+</ul>
+</li>
+<li>
+<p><strong>MiscFeature</strong>: Característica diversa no cubierta en otras categorías.</p>
+<ul>
+<li>Elev: Ascensor</li>
+<li>Gar2: Segundo Garaje (si no está descrito en la sección de garaje)</li>
+<li>Othr: Otro</li>
+<li>Shed: Cobertizo (más de 100 pies cuadrados)</li>
+<li>TenC: Cancha de Tenis</li>
+<li>NA: Ninguno</li>
+</ul>
+</li>
+<li>
+<p><strong>MiscVal</strong>: Valor de la característica diversa en dólares.</p>
+</li>
+<li>
+<p><strong>MoSold</strong>: Mes de venta (MM).</p>
+</li>
+<li>
+<p><strong>YrSold</strong>: Año de venta (AAAA).</p>
+</li>
+<li>
+<p><strong>SaleType</strong>: Tipo de venta.</p>
+<ul>
+<li>WD: Escritura de Garantía - Convencional</li>
+<li>CWD: Escritura de Garantía - Pago en Efectivo</li>
+<li>VWD: Escritura de Garantía - Préstamo de VA</li>
+<li>New: Casa recién construida y vendida</li>
+<li>COD: Escritura de Oficial del Tribunal/Herencia</li>
+<li>Con: Contrato - Pago inicial del 15% y términos regulares</li>
+<li>ConLw: Contrato - Pago inicial bajo y bajo interés</li>
+<li>ConLI: Contrato - Bajo interés</li>
+<li>ConLD: Contrato - Pago inicial bajo</li>
+<li>Oth: Otro</li>
+</ul>
+</li>
+<li>
+<p><strong>SaleCondition</strong>: Condición de venta.</p>
+<ul>
+<li>Normal: Venta Normal</li>
+<li>Abnorml: Venta Anormal - comercio, ejecución hipotecaria, venta corta</li>
+<li>AdjLand: Compra de Terreno Adyacente</li>
+<li>Alloca: Asignación - dos propiedades vinculadas con escrituras separadas, típicamente un condominio con unidad de garaje</li>
+<li>Family: Venta entre miembros de la familia</li>
+<li>Partial: La vivienda no se completó en la última evaluación (asociada a viviendas nuevas)</li>
+</ul>
+</li>
+</ul>
+<h2>Variable Objetivo</h2>
+<p>Nuestra variable objetivo en este caso sera SalesPrice.
+<strong>SalesPrice</strong>: Valor de venta de la vivienda en dolares.</p>
+<h2>Tratamiento de Datos</h2>
+<p>Como primer paso lo que haremos es trabajar con el dataset de entrenamiento en RapidMiner.
+Para trabajar con el dataset de entrenamiento en RapidMiner, el primer paso es importar los datos. Al hacerlo, es muy importante asegurarse de que todas las variables tengan el tipo adecuado para asi lograr un análisis preciso. Los tipos que encontramos son los siguientes:</p>
+<ul>
+<li>
+<p><strong>Binomial</strong>: Utiliza este tipo cuando tengas una variable categórica que representa una elección entre dos categorías, es decir, una variable dicotómica.</p>
+</li>
+<li>
+<p><strong>Polinomica</strong>: Emplea este tipo cuando tengas una variable categórica que representa una elección entre más de dos categorías.</p>
+</li>
+<li>
+<p><strong>Integer</strong>: Selecciona este tipo cuando tengas una variable numérica que representa un número entero.</p>
+</li>
+<li>
+<p><strong>Real</strong>: Utiliza este tipo cuando tengas una variable numérica que representa un número real.</p>
+</li>
+</ul>
+<p>Ademas es importante poner la variable objetivo como label.</p>
+<p>En el dataset de training contamos con 1460 casos.</p>
+<h3>Datos faltantes</h3>
+<p>Al analizar los datos, nos encontramos con que hay datos faltantes en algunas variables.
+Estas variables son:</p>
+<ul>
+<li><strong>LotFrontage</strong></li>
+<li><strong>GarageYrBlt</strong></li>
+<li><strong>MasVnrArea</strong></li>
+</ul>
+<p><img alt="Valores Faltantes" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/ValoresFaltantes.png?raw=true"></p>
+<p>Es importante aclarar que en las variables categoricas se pueden encontrar valores como NA. Esto no significa que sean datos faltantes, sino que son categorias. Por ejemplo, en la variable <em>Bsmt Exposure</em>, NA significa que no tiene sotano, por lo que no es un dato faltante.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Caso de Estudio - Ames Housing&amp;url=/caso-de-estudio-ames-housing.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                      <i class="ic ic-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/caso-de-estudio-ames-housing.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                      <i class="ic ic-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/caso-de-estudio-ames-housing.html&amp;title=Caso de Estudio - Ames Housing" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                      <i class="ic ic-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+                    </a>
+                    <a title="Email" aria-label="Email" class="email" href="mailto:?subject=Caso de Estudio - Ames Housing&amp;body=/caso-de-estudio-ames-housing.html">
+                      <i class="ic ic-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/casos-de-estudio.html">&#39;Casos de Estudio&#39;</a><a href="/tag/analisis-de-datos.html">&#39;Analisis de Datos&#39;</a><a href="/tag/python.html">&#39;Python&#39;</a><a href="/tag/rapidminer.html">&#39;RapidMiner&#39;</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

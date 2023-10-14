@@ -90,6 +90,7 @@
     <p class="nav-label">Menu</p>
     <ul>
           <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="category/CasosdeEstudio" role="presentation">Casos de Estudio</a></li>
           <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
           <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
           <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
@@ -183,14 +184,16 @@ lda = lda.fit(train_X, train_y)
 </code></pre></div>
 
 <h2>Evaluación</h2>
-<p>Ahora podemos predecir las clases para los datos del conjunto de prueba y ver los resultados.
-y_pred = lda.predict(test_X)
-print("Predicted vs Expected")
+<p>Ahora podemos predecir las clases para los datos del conjunto de prueba y ver los resultados.</p>
+<div class="highlight"><pre><span></span><code>y_pred = lda.predict(test_X)
+print(&quot;Predicted vs Expected&quot;)
 print(y_pred)
-print(test_y)</p>
+print(test_y)
+</code></pre></div>
+
 <p><img alt="PredictedVsExpected" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD7/PredictedVsExpected.png?raw=true"></p>
-<p>Reporte:
-<img alt="Report" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD7/Report.png?raw=true"></p>
+<p>Reporte:</p>
+<p><img alt="Report" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD7/Report.png?raw=true"></p>
 <p>Matriz de confusion:</p>
 <p><img alt="Matrix" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD7/Matrix.png?raw=true"></p>
 <h1>Archivos</h1>

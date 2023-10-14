@@ -33,7 +33,7 @@
 
 
 
-    <meta name="description" content="El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression class...">
+    <meta name="description" content="El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression La clase LogisticRegression es una...">
 
     <meta name="author" content="Gaston Cabrera">
 
@@ -47,7 +47,7 @@
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Portafolio IA"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:title" content="TA4 - Algoritmos Lineales - Implementación en Python"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression class..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression La clase LogisticRegression es una..."/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:url" content="/ta4-algoritmos-lineales-implementacion-en-python.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
@@ -77,7 +77,7 @@
   },
   "image": "/theme/images/post-bg.jpg",
   "url": "/ta4-algoritmos-lineales-implementacion-en-python.html",
-  "description": "El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression class..."
+  "description": "El objetivo es entender como utilizar regresion logistica en python. Logisitic Regression La clase LogisticRegression es una..."
 }
 </script>
 </head>
@@ -90,6 +90,7 @@
     <p class="nav-label">Menu</p>
     <ul>
           <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="category/CasosdeEstudio" role="presentation">Casos de Estudio</a></li>
           <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
           <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
           <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
@@ -144,35 +145,37 @@
             <section class="post-content">
                 <p>El objetivo es entender como utilizar regresion logistica en python.</p>
 <h2>Logisitic Regression</h2>
-<p>class LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):</p>
+<p>La clase <code>LogisticRegression</code> es una implementación de la regresión logística en scikit-learn.</p>
 <p>En el caso multiclase, el algoritmo de entrenamiento utiliza uno contra resto (OvR)</p>
 <p>esquema si la opción 'multi_class' está configurada en 'ovr' y utiliza la Pérdida de entropía</p>
 <p>cruzada si la opción 'multi_class' está configurada en 'multinomial'.</p>
-<p>penalty: Especifica la norma de la penalización. Puede ser 'l1', 'l2', 'elasticnet' o None
-(ninguna penalización).</p>
-<p>dual: Formulación dual o primal.</p>
-<p>tol (tolerancia): Tolerancia para los criterios de detención.</p>
-<p>C: Inverso de la fuerza de regularización.</p>
-<p>fit_intercept: Especifica si se debe agregar una constante a la función de decisión.</p>
-<p>intercept_scaling: Útil solo cuando se utiliza el solucionador 'liblinear' y fit_intercept está
-configurado en True.</p>
-<p>class_weight: Pesos asociados a las clases.</p>
-<p>random_state: Utilizado cuando el solucionador es 'sag', 'saga' o 'liblinear' para barajar los
-datos.</p>
-<p>solver (solucionador): Algoritmo a utilizar en el problema de optimización.</p>
-<p>max_iter: Número máximo de iteraciones para que los solucionadores converjan.</p>
-<p>multi_class: Especifica cómo se maneja el problema multiclase.</p>
-<p>verbose: Para los solucionadores 'liblinear' y 'lbfgs', establece la verbosidad.</p>
-<p>warm_start: Cuando se establece en True, reutiliza la solución de la llamada anterior a fit.</p>
-<p>n_jobs: Número de núcleos de CPU utilizados al paralelizar sobre las clases.</p>
-<p>l1_ratio: El parámetro de mezcla Elastic-Net.</p>
-<p>Atributos
-classes_: Lista de etiquetas de clases conocidas por el clasificador.</p>
-<p>coef_: Coeficiente de las características en la función de decisión.</p>
-<p>intercept_: Intercepto (sesgo) añadido a la función de decisión.</p>
-<p>n<em>features_in</em>: Número de características vistas durante el ajuste.</p>
-<p>feature<em>names_in</em>: Nombres de las características vistas durante el ajuste.</p>
-<p>n<em>iter</em>: Número real de iteraciones para todas las clases.</p>
+<h3>Parámetros</h3>
+<ul>
+<li><code>penalty</code>: Especifica la norma de la penalización. Puede ser 'l1', 'l2', 'elasticnet' o None (ninguna penalización).</li>
+<li><code>dual</code>: Formulación dual o primal.</li>
+<li><code>tol</code> (tolerancia): Tolerancia para los criterios de detención.</li>
+<li><code>C</code>: Inverso de la fuerza de regularización.</li>
+<li><code>fit_intercept</code>: Especifica si se debe agregar una constante a la función de decisión.</li>
+<li><code>intercept_scaling</code>: Útil solo cuando se utiliza el solucionador 'liblinear' y <code>fit_intercept</code> está configurado en True.</li>
+<li><code>class_weight</code>: Pesos asociados a las clases.</li>
+<li><code>random_state</code>: Utilizado cuando el solucionador es 'sag', 'saga' o 'liblinear' para barajar los datos.</li>
+<li><code>solver</code> (solucionador): Algoritmo a utilizar en el problema de optimización.</li>
+<li><code>max_iter</code>: Número máximo de iteraciones para que los solucionadores converjan.</li>
+<li><code>multi_class</code>: Especifica cómo se maneja el problema multiclase.</li>
+<li><code>verbose</code>: Para los solucionadores 'liblinear' y 'lbfgs', establece la verbosidad.</li>
+<li><code>warm_start</code>: Cuando se establece en True, reutiliza la solución de la llamada anterior a <code>fit</code>.</li>
+<li><code>n_jobs</code>: Número de núcleos de CPU utilizados al paralelizar sobre las clases.</li>
+<li><code>l1_ratio</code>: El parámetro de mezcla Elastic-Net.</li>
+</ul>
+<h3>Atributos</h3>
+<ul>
+<li><code>classes</code>: Lista de etiquetas de clases conocidas por el clasificador.</li>
+<li><code>coef</code>: Coeficiente de las características en la función de decisión.</li>
+<li><code>intercept</code>: Intercepto (sesgo) añadido a la función de decisión.</li>
+<li><code>n_features_in</code>: Número de características vistas durante el ajuste.</li>
+<li><code>feature_names_in</code>: Nombres de las características vistas durante el ajuste.</li>
+<li><code>n_iter</code>: Número real de iteraciones para todas las clases.</li>
+</ul>
 <h2>Carga de datos</h2>
 <p>Crear un archivo Python y agregar las dependencias necesarias.
 Leer el dataset desde el archivo CSV utilizando la librería Pandas. Y ver como esta
@@ -189,7 +192,9 @@ Crear el un modelo de LR y entrenarlo.</p>
 <p>Ver la matriz de confusión
 <img alt="Matrix" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA4/Matrix.png?raw=true"></p>
 <h2>Archivos</h2>
-<p><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA4/UT3_TA4_PD_Ej4.ipynb?raw=true">UT3_TA4_PD_Ej4.ipynb</a></p>
+<ul>
+<li><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA4/UT3_TA4_PD_Ej4.ipynb?raw=true">UT3_TA4_PD_Ej4.ipynb</a></li>
+</ul>
             </section>
 
             <section class="post-info">

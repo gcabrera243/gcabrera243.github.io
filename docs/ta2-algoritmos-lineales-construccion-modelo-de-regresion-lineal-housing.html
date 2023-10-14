@@ -90,6 +90,7 @@
     <p class="nav-label">Menu</p>
     <ul>
           <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="category/CasosdeEstudio" role="presentation">Casos de Estudio</a></li>
           <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
           <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
           <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
@@ -144,8 +145,8 @@
             <section class="post-content">
                 <p>Los objetivos de este Trabajo de Aplicación son:</p>
 <ol>
-<li>Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana de precios de una casa </li>
-<li>Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes </li>
+<li>Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana de precios de una casa</li>
+<li>Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes</li>
 <li>Evaluar la exactitud del modelo para predecir nuevos ejemplos</li>
 </ol>
 <h1>Problema</h1>
@@ -252,11 +253,11 @@
 <p>Use bias determina si tiene que calcular o no un parámetro independiente o interceptor.</p>
 <h1>Ejecución e interpretación</h1>
 <h2>¿cuáles no parecen ser muy significativos?</h2>
-<p>Sin feature selection: ZN,INDUS,NOX y AGE parecen no ser significativos.
-squared_correlation (R2): 0.758
+<p>Sin feature selection: ZN,INDUS,NOX y AGE parecen no ser significativos.</p>
+<p>squared_correlation (R2): 0.758
 <img alt="SalidaLinearRegression" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/SalidaLinearRegression.png?raw=true"></p>
-<p>Con feature selection: Al aplicar Greedy se eliminan los que parecían no ser significativos.
-squared_correlation(R2): 0.752</p>
+<p>Con feature selection: Al aplicar Greedy se eliminan los que parecían no ser significativos.</p>
+<p>squared_correlation(R2): 0.752</p>
 <p><img alt="Greedy" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/Greedy.png?raw=true"></p>
 <h1>Aplicación sobre datos “no vistos”</h1>
 <p><img alt="process2" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/process2.png?raw=true"></p>
