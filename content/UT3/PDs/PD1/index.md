@@ -26,4 +26,5 @@ Al generar valores de entrada entre 0 y 8 con paso 0.1 llegamos a la siguiente g
 ![Grafica](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/Tabla0a8.png?raw=true)
 
 Los calculos y valores pueden ser vistos en el siguiente archivo:
-[PD1.xlsx](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/PD1.xlsx?raw=true)
+
+-   [PD1.xlsx](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/PD1.xlsx?raw=true)

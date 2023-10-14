@@ -44,7 +44,11 @@ Dio mejor la performance de los datos sin normalizar en este caso. Esto puede se
 ## Archivos
 
 Archivos Ejercicio 1:
-[HandleMissingValues.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/HandleMissingValues.rmp?raw=true)
-[RemoveOutliers.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/RemoveOutliers.rmp?raw=true)
+
+-   [HandleMissingValues.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/HandleMissingValues.rmp?raw=true)
+
+-   [RemoveOutliers.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/RemoveOutliers.rmp?raw=true)
+
 Archivos Ejercicio 2:
-[UT2_PD1_Ej2.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/UT2_PD1_Ej2.rmp?raw=true)
+
+-   [UT2_PD1_Ej2.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD1/UT2_PD1_Ej2.rmp?raw=true)

@@ -51,14 +51,16 @@ Creamos el modelo de LDA y lo entrenamos.
 ## Evaluación
 
 Ahora podemos predecir las clases para los datos del conjunto de prueba y ver los resultados.
-y_pred = lda.predict(test_X)
-print("Predicted vs Expected")
-print(y_pred)
-print(test_y)
+
+    y_pred = lda.predict(test_X)
+    print("Predicted vs Expected")
+    print(y_pred)
+    print(test_y)
 
 ![PredictedVsExpected](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD7/PredictedVsExpected.png?raw=true)
 
 Reporte:
+
 ![Report](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/PDs/PD7/Report.png?raw=true)
 
 Matriz de confusion:

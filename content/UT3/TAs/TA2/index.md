@@ -6,8 +6,8 @@ tags: 'TAs','TA2','UT3'
 
 Los objetivos de este Trabajo de Aplicación son:
 
-1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana de precios de una casa 
-2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes 
+1. Identificar cuáles atributos, entre los varios disponibles,son necesarios para predecir con exactitud la mediana de precios de una casa
+2. Construir un modelo de regresión lineal múltiple para predecir la mediana de los precios utilizando los atributos más importantes
 3. Evaluar la exactitud del modelo para predecir nuevos ejemplos
 
 # Problema
@@ -35,7 +35,7 @@ Predecir el precio de una vivienda a partir de su ubicacion y de algunos atribut
 
 -   **MEDV**: Mediana de valores de hogares ocupados por propietarios (en miles de dólares).
 
-#Preparación de datos
+# Preparación de datos
 
 Al analizar las estadisticas se detectan algunos posibles valores outliers en CHAS y en INDUS
 
@@ -69,10 +69,12 @@ Use bias determina si tiene que calcular o no un parámetro independiente o inte
 ## ¿cuáles no parecen ser muy significativos?
 
 Sin feature selection: ZN,INDUS,NOX y AGE parecen no ser significativos.
+
 squared_correlation (R2): 0.758
 ![SalidaLinearRegression](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/SalidaLinearRegression.png?raw=true)
 
 Con feature selection: Al aplicar Greedy se eliminan los que parecían no ser significativos.
+
 squared_correlation(R2): 0.752
 
 ![Greedy](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT3/TAs/TA2/Greedy.png?raw=true)

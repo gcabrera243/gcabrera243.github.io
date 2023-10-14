@@ -16,18 +16,20 @@ Clase Objetivo
 survived - Supervivencia (0 = No; 1 = Sí)
 
 Atributos
-pclass - Clase de Pasajero (1 = 1ra; 2 = 2da; 3 = 3ra)
-name - Nombre
-sex - Género
-age - Edad
-sibsp - Número de Hermanos/Cónyuges a Bordo
-parch - Número de Padres/Hijos a Bordo
-ticket - Número de Boleto
-fare - Tarifa del Pasajero
-cabin - Cabina
-embarked - Puerto de Embarque (C = Cherbourg; Q = Queenstown; S = Southampton)
-boat - Bote Salvavidas (si sobrevivió)
-body - Número de Cuerpo (si no sobrevivió y el cuerpo fue recuperado)
+| Atributo | Descripción |
+|-----------|-------------------------------------------------------|
+| pclass | Clase de Pasajero (1 = 1ra; 2 = 2da; 3 = 3ra) |
+| name | Nombre |
+| sex | Género |
+| age | Edad |
+| sibsp | Número de Hermanos/Cónyuges a Bordo |
+| parch | Número de Padres/Hijos a Bordo |
+| ticket | Número de Boleto |
+| fare | Tarifa del Pasajero |
+| cabin | Cabina |
+| embarked | Puerto de Embarque (C = Cherbourg; Q = Queenstown; S = Southampton) |
+| boat | Bote Salvavidas (si sobrevivió) |
+| body | Número de Cuerpo (si no sobrevivió y el cuerpo fue recuperado) |
 
 ![atributos](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA1/Atributos.png?raw=true)
 
@@ -56,7 +58,7 @@ y los pesos son
 
 ![Weights](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA1/Weights.png?raw=true)
 
-## Archivos
+# Archivos
 
 A continuacion se deja el proceso de RapidMiner
 

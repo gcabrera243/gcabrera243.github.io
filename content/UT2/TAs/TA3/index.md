@@ -14,7 +14,7 @@ El gráfico parece mostrar una tendencia ascendente a lo largo de los años, per
 
 Para estos valores lo que podemos hacer es usar un bloque de deteccion de outliers por distancia por ejemplo.
 
-## Iris
+# Iris
 
 Predecir la especie de una flor de iris en función de cuatro atributos relacionados con las dimensiones de sus sépalos y pétalos. Se trata de un problema de clasificacion.
 
