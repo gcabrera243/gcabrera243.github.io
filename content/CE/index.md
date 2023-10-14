@@ -1,6 +1,6 @@
 Title: Caso de Estudio - Ames Housing
 Date: 2023-10-14 10:20
-Category: Casos de Estudio
+Category: CasosdeEstudio
 cover:
 tags: 'Casos de Estudio', 'Analisis de Datos', 'Python', 'RapidMiner'
 
