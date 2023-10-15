@@ -33,7 +33,7 @@
 
 
 
-    <meta name="description" content="En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando Python y sklearn. Codigo implementado codigo">
+    <meta name="description" content="En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando Python y sklearn. Importar Librerias...">
 
     <meta name="author" content="Gaston Cabrera">
 
@@ -47,7 +47,7 @@
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Introduccion a los Metodos de Aprendizaje Automático"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:title" content="PD4 - Análisis del dataset “Titanic” con python"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando Python y sklearn. Codigo implementado codigo"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando Python y sklearn. Importar Librerias..."/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:url" content="/pd4-analisis-del-dataset-titanic-con-python.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
@@ -77,7 +77,7 @@
   },
   "image": "https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Header.png?raw=true",
   "url": "/pd4-analisis-del-dataset-titanic-con-python.html",
-  "description": "En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando Python y sklearn. Codigo implementado codigo"
+  "description": "En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando Python y sklearn. Importar Librerias..."
 }
 </script>
 </head>
@@ -146,6 +146,69 @@
             <section class="post-content">
                 <p>En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando
 Python y sklearn.</p>
+<h2>Importar Librerias</h2>
+<p>Lo primero que hacemos es importar las librerias que van a ser necesarias para el desarrollo del modelado</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Cargar Datos</h2>
+<p>Con Panda cargamos los datos de entrenamiento y test. Con head() podremos visualizar una muestra de los datos.</p>
+<div class="highlight"><pre><span></span><code>training = pd.read_csv(&quot;train.csv&quot;)
+testing = pd.read_csv(&quot;test.csv&quot;)
+training.head()
+</code></pre></div>
+
+<p><img alt="training" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/training.png?raw=true"></p>
+<div class="highlight"><pre><span></span><code>testing.head()
+</code></pre></div>
+
+<p><img alt="testing" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/testing.png?raw=true"></p>
+<h2>Valores NaN</h2>
+<p>Debemos reemplazar la data faltante.</p>
+<div class="highlight"><pre><span></span><code>def null_table(training, testing):
+print(&quot;Training Data Frame&quot;)
+print(pd.isnull(training).sum())
+print(&quot; &quot;)
+print(&quot;Testing Data Frame&quot;)
+print(pd.isnull(testing).sum())
+
+null_table(training, testing)
+</code></pre></div>
+
+<p><img alt="dataFaltante" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/dataFaltante.png?raw=true"></p>
+<p>Nos deshacemos de la columna Cabin</p>
+<div class="highlight"><pre><span></span><code>training.drop(labels = [&quot;Cabin&quot;, &quot;Ticket&quot;], axis = 1, inplace = True)
+testing.drop(labels = [&quot;Cabin&quot;, &quot;Ticket&quot;], axis = 1, inplace = True)
+
+null_table(training, testing)
+</code></pre></div>
+
+<p>Y para Age, Embarked y Fare los reemplazamos por su mediana</p>
+<div class="highlight"><pre><span></span><code>training[&quot;Age&quot;].fillna(training[&quot;Age&quot;].median(), inplace = True)
+testing[&quot;Age&quot;].fillna(testing[&quot;Age&quot;].median(), inplace = True)
+training[&quot;Embarked&quot;].fillna(&quot;S&quot;, inplace = True)
+testing[&quot;Fare&quot;].fillna(testing[&quot;Fare&quot;].median(), inplace = True)
+
+null_table(training, testing)
+</code></pre></div>
+
+<p><img alt="dataCompleta" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/dataCompleta.png?raw=true"></p>
+<h2>Visualizacion</h2>
+<h3>Genero</h3>
+<p><img alt="Genero" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/barPlot.png?raw=true"></p>
+<h3>Clase</h3>
+<p><img alt="Clase" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/pClass.png?raw=true"></p>
+<p><img alt="SurvivalRate" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/SurvivalRate.png?raw=true"></p>
+<p><img alt="SurvivalRates2" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/SurvivalRates2.png?raw=true"></p>
 <h2>Codigo implementado</h2>
 <ul>
 <li><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/UT2_PD4.ipynb?raw=true">codigo</a></li>
