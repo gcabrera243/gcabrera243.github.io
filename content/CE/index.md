@@ -571,10 +571,75 @@ En el dataset de training contamos con 1460 casos.
 Al analizar los datos, nos encontramos con que hay datos faltantes en algunas variables.
 Estas variables son:
 
--   **LotFrontage**
--   **GarageYrBlt**
--   **MasVnrArea**
+-   **LotFrontage**: 259 datos faltantes.
+-   **GarageYrBlt**: 81 datos faltantes.
+-   **MasVnrArea**: 8 datos faltantes.
 
 ![Valores Faltantes](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/ValoresFaltantes.png?raw=true)
 
 Es importante aclarar que en las variables categoricas se pueden encontrar valores como NA. Esto no significa que sean datos faltantes, sino que son categorias. Por ejemplo, en la variable _Bsmt Exposure_, NA significa que no tiene sotano, por lo que no es un dato faltante.
+
+Para los datos faltantes lo que se puede hacer es sustituir estos por el promedio.
+
+### Datos no necesarios
+
+Excluiremos el atributo _Id_ ya que no aporta valor.
+
+Como nuestro objetivo es predecir el precio de venta de una vivienda en Ames, no tiene mucho sentido tener datos que solo se conocen cuando la casa es vendida. Por lo tanto, vamos a excluir los siguientes atributos:
+
+-   _MoSold_
+-   _YrSold_
+-   _SaleType_
+-   _SaleCondition_
+
+### Correlaciones
+
+Otra tarea por hacer es analizar las correlaciones. Esto se calcula para variables numericas y variables ordinales.
+
+Si filtramos por los atributos que tiene una correlacion mayor a 0.5 con _SalesPrice_, nos quedamos con los siguientes:
+
+![Correlaciones](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/CorrelacionVariableObjetivo.png?raw=true)
+
+Ademas vemos ciertas correlaciones entre atributos.
+
+![Correlaciones](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/CorrelacionAtributos.png?raw=true)
+
+Si tomamos 0.7 como umbral, podemos ver que hay ciertas variables que estan muy correlacionadas entre si. Por ejemplo, _GarageCars_ y _GarageArea_ tienen una correlacion de 0.88. Si lo pensamos esto tiene sentido ya que si yo tengo un mayor tamaño de garages, mas autos puedo entrar.
+Ademas, _TotRmsAbvGrd_ tiene una correlacion de 0.83 con _GrLivArea_ y _1stFlrSF_ tiene una correlacion de 0.82 con _TotalBsmtSF_.
+
+### Outliers y sesgos
+
+Al estudiar los outliers de los atributos con alta correlacion con la variable objetivo podemos observar algunos outliers por ejemplo en _1stFlrSF_.
+
+![1stFlrSF](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/1stFlrSF.png?raw=true)
+
+Ademas, podemos ver que hay cierto sesgo en los datos. Un ejemplo de esto es _YearBuilt_, en el que se puede notar una clara distribucion hacia la derecha, indicandonos que la mayoria de las casas son mas nuevas.
+
+![YearBuilt](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/YearBuilt.png?raw=true)
+
+Para evitar esto lo que se puede hacer es eliminar los outliers y normalizar los datos antes de entrenar el modelo.
+
+# Modelado
+
+Para este caso de estudio lo que se mostrara sera una comparacion del modelado aplicando las tecnicas de tratamiento de datos mencionadas anteriormente y sin aplicarlas. El modelo a utilizar ser el de regresion lineal y se utilizara el dataset de entrenamiento.
+
+Este dataset de entrenamiento se dividira en dos, uno para entrenar el modelo y otro para probarlo. Esta division se hara 70% para entrenamiento y 30% para prueba. Se podria utiliar cross validation, pero esto hacer que el proceso de entrenamiento se vuelva muy lento.
+
+![Modelo](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Model.png?raw=true)
+
+## Sin tratamiento de datos
+
+root_mean_squared_error: 71285.561 +/- 0.000
+
+## Con tratamiento de datos
+
+root_mean_squared_error: 36253.778 +/- 0.000
+
+# Resultados
+
+Como se puede ver, al utlizar metodos de tratamiento de datos el RMSE nos da considerablemente mas bajo. Esto se debe a que al tomarnos el trabajo de analizar las correlaciones, eliminar los outliers, normalizar los datos el modelo puede aprender mejor.
+
+# Archivos
+
+-   [Dataset.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Dataset.rmp)
+-   [Dataset.ipynb](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Dataset.ipynb)

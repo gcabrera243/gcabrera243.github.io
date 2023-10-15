@@ -92,7 +92,7 @@
     <p class="nav-label">Menu</p>
     <ul>
           <li><a href="/" role="presentation">Home</a></li>
-          <li><a href="category/CasosdeEstudio" role="presentation">Casos de Estudio</a></li>
+          <li><a href="category/CasosdeEstudio.html" role="presentation">Casos de Estudio</a></li>
           <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
           <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
           <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
@@ -833,12 +833,51 @@ Para trabajar con el dataset de entrenamiento en RapidMiner, el primer paso es i
 <p>Al analizar los datos, nos encontramos con que hay datos faltantes en algunas variables.
 Estas variables son:</p>
 <ul>
-<li><strong>LotFrontage</strong></li>
-<li><strong>GarageYrBlt</strong></li>
-<li><strong>MasVnrArea</strong></li>
+<li><strong>LotFrontage</strong>: 259 datos faltantes.</li>
+<li><strong>GarageYrBlt</strong>: 81 datos faltantes.</li>
+<li><strong>MasVnrArea</strong>: 8 datos faltantes.</li>
 </ul>
 <p><img alt="Valores Faltantes" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/ValoresFaltantes.png?raw=true"></p>
 <p>Es importante aclarar que en las variables categoricas se pueden encontrar valores como NA. Esto no significa que sean datos faltantes, sino que son categorias. Por ejemplo, en la variable <em>Bsmt Exposure</em>, NA significa que no tiene sotano, por lo que no es un dato faltante.</p>
+<p>Para los datos faltantes lo que se puede hacer es sustituir estos por el promedio.</p>
+<h3>Datos no necesarios</h3>
+<p>Excluiremos el atributo <em>Id</em> ya que no aporta valor.</p>
+<p>Como nuestro objetivo es predecir el precio de venta de una vivienda en Ames, no tiene mucho sentido tener datos que solo se conocen cuando la casa es vendida. Por lo tanto, vamos a excluir los siguientes atributos:</p>
+<ul>
+<li><em>MoSold</em></li>
+<li><em>YrSold</em></li>
+<li><em>SaleType</em></li>
+<li><em>SaleCondition</em></li>
+</ul>
+<h3>Correlaciones</h3>
+<p>Otra tarea por hacer es analizar las correlaciones. Esto se calcula para variables numericas y variables ordinales.</p>
+<p>Si filtramos por los atributos que tiene una correlacion mayor a 0.5 con <em>SalesPrice</em>, nos quedamos con los siguientes:</p>
+<p><img alt="Correlaciones" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/CorrelacionVariableObjetivo.png?raw=true"></p>
+<p>Ademas vemos ciertas correlaciones entre atributos.</p>
+<p><img alt="Correlaciones" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/CorrelacionAtributos.png?raw=true"></p>
+<p>Si tomamos 0.7 como umbral, podemos ver que hay ciertas variables que estan muy correlacionadas entre si. Por ejemplo, <em>GarageCars</em> y <em>GarageArea</em> tienen una correlacion de 0.88. Si lo pensamos esto tiene sentido ya que si yo tengo un mayor tamaño de garages, mas autos puedo entrar.
+Ademas, <em>TotRmsAbvGrd</em> tiene una correlacion de 0.83 con <em>GrLivArea</em> y <em>1stFlrSF</em> tiene una correlacion de 0.82 con <em>TotalBsmtSF</em>.</p>
+<h3>Outliers y sesgos</h3>
+<p>Al estudiar los outliers de los atributos con alta correlacion con la variable objetivo podemos observar algunos outliers por ejemplo en <em>1stFlrSF</em>.</p>
+<p><img alt="1stFlrSF" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/1stFlrSF.png?raw=true"></p>
+<p>Ademas, podemos ver que hay cierto sesgo en los datos. Un ejemplo de esto es <em>YearBuilt</em>, en el que se puede notar una clara distribucion hacia la derecha, indicandonos que la mayoria de las casas son mas nuevas.</p>
+<p><img alt="YearBuilt" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/YearBuilt.png?raw=true"></p>
+<p>Para evitar esto lo que se puede hacer es eliminar los outliers y normalizar los datos antes de entrenar el modelo.</p>
+<h1>Modelado</h1>
+<p>Para este caso de estudio lo que se mostrara sera una comparacion del modelado aplicando las tecnicas de tratamiento de datos mencionadas anteriormente y sin aplicarlas. El modelo a utilizar ser el de regresion lineal y se utilizara el dataset de entrenamiento.</p>
+<p>Este dataset de entrenamiento se dividira en dos, uno para entrenar el modelo y otro para probarlo. Esta division se hara 70% para entrenamiento y 30% para prueba. Se podria utiliar cross validation, pero esto hacer que el proceso de entrenamiento se vuelva muy lento.</p>
+<p><img alt="Modelo" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Model.png?raw=true"></p>
+<h2>Sin tratamiento de datos</h2>
+<p>root_mean_squared_error: 71285.561 +/- 0.000</p>
+<h2>Con tratamiento de datos</h2>
+<p>root_mean_squared_error: 36253.778 +/- 0.000</p>
+<h1>Resultados</h1>
+<p>Como se puede ver, al utlizar metodos de tratamiento de datos el RMSE nos da considerablemente mas bajo. Esto se debe a que al tomarnos el trabajo de analizar las correlaciones, eliminar los outliers, normalizar los datos el modelo puede aprender mejor.</p>
+<h1>Archivos</h1>
+<ul>
+<li><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Dataset.rmp">Dataset.rmp</a></li>
+<li><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Dataset.ipynb">Dataset.ipynb</a></li>
+</ul>
             </section>
 
             <section class="post-info">
