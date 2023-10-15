@@ -1,8 +1,8 @@
 Title: TA2 - Procesamiento previo de los datos - Wine
 Date: 2023-09-03 10:20
 Category: UT2
-cover:
-tags: ['TAs']
+tags: 'TAs','Procesamiento previo de datos','RapidMiner','Wine'
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA2/Header.jpg?raw=true
 
 En este artículo, utilizaremos el conjunto de datos Wine de la UCI como ejemplo práctico para demostrar lo aprendido de normalizacion.
 

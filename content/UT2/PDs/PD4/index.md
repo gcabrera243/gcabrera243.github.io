@@ -1,8 +1,8 @@
 Title: PD4 - Análisis del dataset “Titanic” con python
 Date: 2023-09-03 10:20
 Category: UT2
-cover:
-tags: ['PDs']
+tags: 'PDs', 'Titanic', 'Python'
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Header.png?raw=true
 
 En este ejercicio se desea construir un modelo de predicción para el dataset “Titanic”, utilizando
 Python y sklearn.

@@ -1,8 +1,8 @@
 Title: TA1 - Procesamiento previo de los datos - Titanic
 Date: 2023-09-03 10:20
 Category: UT2
-cover:
-tags: ['TAs']
+tags: 'TAs', 'Titanic', 'RapidMiner'
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA1/Header.png?raw=true
 
 En este articulo, investigaremos el dataset de titanic.
 

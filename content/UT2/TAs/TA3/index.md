@@ -1,8 +1,8 @@
 Title: TA3 - Procesamiento previo de los datos - Telephone
 Date: 2023-09-03 10:20
 Category: UT2
-cover:
-tags: ['TAs']
+tags: 'TAs', 'Iris', 'Telephone', 'RapidMiner'
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/TAs/TA3/Header.jpg?raw=true
 
 En este articulo, trabajaremos con el dataset de telephone y analizaremos sus datos. Ademas trabajeremos con el dataset de Iris y lo modelaremos en RapidMiner.
 

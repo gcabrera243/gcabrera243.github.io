@@ -1,8 +1,8 @@
-Title: PD2 - Procesamiento previo de los datos - Build a model
+<!-- Title: PD2 - Procesamiento previo de los datos - Build a model
 Date: 2023-09-03 10:20
 Category: UT2
-cover:
-tags: ['PDs']
+tags: 'PDs'
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD2/Header.jpg?raw=true
 
 ## Aprendizaje de RapidMiner
 
@@ -34,4 +34,4 @@ Aprendemos a usar el ROC Curves.
 -   [Scoring.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/Scoring.rmp?raw=true)
 -   [TestSplitsandValidation.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/TestSplitsandValidation.rmp?raw=true)
 -   [CrossValidation.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/CrossValidation.rmp?raw=true)
--   [VisualModelComparison.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/VisualModelComparison.rmp?raw=true)
+-   [VisualModelComparison.rmp](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD3/VisualModelComparison.rmp?raw=true) -->

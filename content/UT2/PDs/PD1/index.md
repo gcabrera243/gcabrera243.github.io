@@ -1,8 +1,8 @@
-Title: PD1 - Procesamiento previo de los datos - Wine
+Title: Procesamiento previo de los datos con el dataset Wine
 Date: 2023-09-03 10:20
 Category: UT2
-cover:
-tags: ['PDs']
+tags: 'PDs','Procesamiento previo de datos','RapidMiner','Wine'
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD1/Header.jpg?raw=true
 
 En este artículo, seguiremos los tutoriales de RapidMiner "Handling Missing Values" y "Normalization and Outlier detection" para la preparacion de datos y luego utilizaremos el conjunto de datos Wine de la UCI como ejemplo práctico para demostrar lo aprendido.
 
