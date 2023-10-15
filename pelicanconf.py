@@ -1,5 +1,5 @@
 AUTHOR = 'Gaston Cabrera'
-SITENAME = 'Portafolio IA'
+SITENAME = 'Introduccion a los Metodos de Aprendizaje Automático'
 SITEURL = ''
 
 PATH = 'content'
@@ -9,6 +9,9 @@ THEME = 'attila-1.6'
 TIMEZONE = 'Europe/Rome'
 
 DEFAULT_LANG = 'ES'
+
+HOME_COVER = 'https://github.com/gcabrera243/gcabrera243.github.io/blob/main/HeaderMain.webp?raw=true'
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
