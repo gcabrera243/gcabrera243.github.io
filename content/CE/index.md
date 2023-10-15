@@ -1,7 +1,8 @@
 Title: Caso de Estudio - Ames Housing
 Date: 2023-10-14 10:20
 Category: CasosdeEstudio
-cover:
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/AmesHeader.png?raw=true
+
 tags: 'Casos de Estudio', 'Analisis de Datos', 'Python', 'RapidMiner'
 
 # Objetivo
