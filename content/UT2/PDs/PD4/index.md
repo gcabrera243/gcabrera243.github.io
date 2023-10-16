@@ -83,6 +83,40 @@ Y para Age, Embarked y Fare los reemplazamos por su mediana
 
 ![SurvivalRates2](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/SurvivalRates2.png?raw=true)
 
+### Edad
+
+![Survived](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Survived.png?raw=true)
+
+![Jitter](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Jitter.png?raw=true)
+
+## Ingeniería de Características
+
+Como tenemos valores categoricos, debemos representar estos strings como valores numericos usando One-Hot Encoding.
+
+    from sklearn.preprocessing import LabelEncoder
+
+    le_sex = LabelEncoder()
+    le_sex.fit(training["Sex"])
+
+    encoded_sex_training = le_sex.transform(training["Sex"])
+    training["Sex"] = encoded_sex_training
+    encoded_sex_testing = le_sex.transform(testing["Sex"])
+    testing["Sex"] = encoded_sex_testing
+
+    le_embarked = LabelEncoder()
+    le_embarked.fit(training["Embarked"])
+
+    encoded_embarked_training = le_embarked.transform(training["Embarked"])
+    training["Embarked"] = encoded_embarked_training
+    encoded_embarked_testing = le_embarked.transform(testing["Embarked"])
+    testing["Embarked"] = encoded_embarked_testing
+
+## Modelado
+
+Luego al hacer los distintos modelados, obtenemos los siguientes resultados:
+
+![Results](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Results.png?raw=true)
+
 ## Codigo implementado
 
 -   [codigo](https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/UT2_PD4.ipynb?raw=true)

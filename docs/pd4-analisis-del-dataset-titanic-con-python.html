@@ -209,6 +209,33 @@ null_table(training, testing)
 <p><img alt="Clase" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/pClass.png?raw=true"></p>
 <p><img alt="SurvivalRate" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/SurvivalRate.png?raw=true"></p>
 <p><img alt="SurvivalRates2" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/SurvivalRates2.png?raw=true"></p>
+<h3>Edad</h3>
+<p><img alt="Survived" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Survived.png?raw=true"></p>
+<p><img alt="Jitter" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Jitter.png?raw=true"></p>
+<h2>Ingeniería de Características</h2>
+<p>Como tenemos valores categoricos, debemos representar estos strings como valores numericos usando One-Hot Encoding.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+
+<span class="n">le_sex</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">le_sex</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">])</span>
+
+<span class="n">encoded_sex_training</span> <span class="o">=</span> <span class="n">le_sex</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">training</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">])</span>
+<span class="n">training</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoded_sex_training</span>
+<span class="n">encoded_sex_testing</span> <span class="o">=</span> <span class="n">le_sex</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">testing</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">])</span>
+<span class="n">testing</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoded_sex_testing</span>
+
+<span class="n">le_embarked</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">le_embarked</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">[</span><span class="s2">&quot;Embarked&quot;</span><span class="p">])</span>
+
+<span class="n">encoded_embarked_training</span> <span class="o">=</span> <span class="n">le_embarked</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">training</span><span class="p">[</span><span class="s2">&quot;Embarked&quot;</span><span class="p">])</span>
+<span class="n">training</span><span class="p">[</span><span class="s2">&quot;Embarked&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoded_embarked_training</span>
+<span class="n">encoded_embarked_testing</span> <span class="o">=</span> <span class="n">le_embarked</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">testing</span><span class="p">[</span><span class="s2">&quot;Embarked&quot;</span><span class="p">])</span>
+<span class="n">testing</span><span class="p">[</span><span class="s2">&quot;Embarked&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoded_embarked_testing</span>
+</code></pre></div>
+
+<h2>Modelado</h2>
+<p>Luego al hacer los distintos modelados, obtenemos los siguientes resultados:</p>
+<p><img alt="Results" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/Results.png?raw=true"></p>
 <h2>Codigo implementado</h2>
 <ul>
 <li><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT2/PDs/PD4/UT2_PD4.ipynb?raw=true">codigo</a></li>
