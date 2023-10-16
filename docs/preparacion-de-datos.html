@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Preparación de Datos</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/preparacion-de-datos.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Custom fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Preparación de Datos La preparación de datos es una etapa fundamental en el proceso de desarrollo de modelos de Machine Learning. Es una...">
+
+    <meta name="author" content="Gaston Cabrera">
+
+    <meta name="tags" content="'UT1'">
+    <meta name="tags" content="'Machine Learning'">
+    <meta name="tags" content="'Preparación de Datos'">
+    <meta name="tags" content="'Aprendizaje Automatico'">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Introduccion a los Metodos de Aprendizaje Automático"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Preparación de Datos"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="Preparación de Datos La preparación de datos es una etapa fundamental en el proceso de desarrollo de modelos de Machine Learning. Es una..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/preparacion-de-datos.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2023-09-03 10:20:00+02:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/gaston-cabrera.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="UT1"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'UT1'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Machine Learning'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Preparación de Datos'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Aprendizaje Automatico'"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/PreaparacionDatos/Header.png?raw=true">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Preparación de Datos",
+  "headline": "Preparación de Datos",
+  "datePublished": "2023-09-03 10:20:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Gaston Cabrera",
+    "url": "/author/gaston-cabrera.html"
+  },
+  "image": "https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/PreaparacionDatos/Header.png?raw=true",
+  "url": "/preparacion-de-datos.html",
+  "description": "Preparación de Datos La preparación de datos es una etapa fundamental en el proceso de desarrollo de modelos de Machine Learning. Es una..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+          <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="category/CasosdeEstudio.html" role="presentation">Casos de Estudio</a></li>
+          <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
+          <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
+          <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
+          <li><a href="/category/ut4.html" role="presentation">UT4</a></li>
+          <li><a href="/category/ut5.html" role="presentation">UT5</a></li>
+          <li><a href="/category/ut6.html" role="presentation">UT6</a></li>
+          <li><a href="/category/ut7.html" role="presentation">UT7</a></li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" aria-label="Home" title="Home">
+                  <i class="ic ic-arrow-left" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button" aria-label="Menu">
+              <i class="ic ic-menu" aria-hidden="true"></i>
+              <span>Menu</span>
+            </a>
+          </span>
+        </nav>
+        <h1 class="post-title">Preparación de Datos</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+            | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+        </span>
+            <div class="post-cover cover" style="background-image: url('https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/PreaparacionDatos/Header.png?raw=true')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <h1>Preparación de Datos</h1>
+<p>La preparación de datos es una etapa fundamental en el proceso de desarrollo de modelos de Machine Learning. Es una parte del proceso que consume más tiempo y esfuerzo, pero es esencial para garantizar que los modelos produzcan resultados precisos y confiables.</p>
+<p>A menudo, los datos rara vez están disponibles en la forma requerida por los algoritmos de Machine Learning.</p>
+<p>Además, durante la preparación de datos nos pueden surgir dudas como:</p>
+<ul>
+<li>¿Qué sucede si los datos contienen errores o información incorrecta?</li>
+<li>¿Y si faltan datos importantes?</li>
+</ul>
+<p>Estos problemas deben abordarse cuidadosamente para garantizar la calidad de los datos y, en última instancia, la efectividad de los modelos de Machine Learning.</p>
+<h2>Datos Faltantes</h2>
+<p>Uno de los problemas mas comunes a los que nos enfrentamos al preparar los datos es la presencia de datos faltantes. Lo que se puede hacer en estos casos es o bien eliminarlos o bien reemplazarlos por un valor que tenga sentido (por ejemplo se podria utilizar el promedio para llenar esta datos faltante).</p>
+<h2>Errores en datos</h2>
+<p>Los errores en los datos pueden incluir valores atípicos (outliers), incoherencias o información incorrecta.</p>
+<p>Lo que se puede hacer para identificar es revisar manualmente los datos sospechosos o utilizar técnicas estadísticas para detectar valores atípicos.</p>
+<h2>Conversion tipo de datos</h2>
+<p>La conversión de tipos de datos implica transformar variables de un tipo a otro, como por ejemplo convertir datos categóricos en numéricos. Esto es necesario para que los algoritmos de Machine Learning puedan trabajar con los datos de manera efectiva.</p>
+<p>La elección de la técnica de conversión dependerá de la naturaleza de las variables y de las necesidades del modelo.</p>
+<h2>Feature Selection</h2>
+<p>La selección de características implica identificar y retener las variables más relevantes para el problema que se está abordando, mientras se descartan las menos importantes. Esto puede ayudar a mejorar la eficiencia y el rendimiento de los modelos de Machine Learning, reduciendo la complejidad y el ruido en los datos.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Preparación de Datos&amp;url=/preparacion-de-datos.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                      <i class="ic ic-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/preparacion-de-datos.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                      <i class="ic ic-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/preparacion-de-datos.html&amp;title=Preparación de Datos" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                      <i class="ic ic-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+                    </a>
+                    <a title="Email" aria-label="Email" class="email" href="mailto:?subject=Preparación de Datos&amp;body=/preparacion-de-datos.html">
+                      <i class="ic ic-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/ut1.html">&#39;UT1&#39;</a><a href="/tag/machine-learning.html">&#39;Machine Learning&#39;</a><a href="/tag/preparacion-de-datos.html">&#39;Preparación de Datos&#39;</a><a href="/tag/aprendizaje-automatico.html">&#39;Aprendizaje Automatico&#39;</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>
