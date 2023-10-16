@@ -2,7 +2,7 @@ Title: Preparación de Datos
 Date: 2023-09-03 10:20
 Category: UT1
 Tags: 'UT1','Machine Learning', 'Preparación de Datos', 'Aprendizaje Automatico'
-Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/PreaparacionDatos/Header.png?raw=true
+Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/PreparacionDatos/Header.png?raw=true
 
 # Preparación de Datos
 
