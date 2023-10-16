@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Introducción al aprendizaje automático</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/introduccion-al-aprendizaje-automatico.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Custom fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="¿Que es la "Inteligencia Artificial"? La Inteligencia Artificial se refiere a un campo de la informática que se enfoca en la creación de...">
+
+    <meta name="author" content="Gaston Cabrera">
+
+    <meta name="tags" content="'UT1'">
+    <meta name="tags" content="'Machine Learning'">
+    <meta name="tags" content="'Definicion'">
+    <meta name="tags" content="'Aprendizaje Automatico'">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Introduccion a los Metodos de Aprendizaje Automático"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Introducción al aprendizaje automático"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="¿Que es la "Inteligencia Artificial"? La Inteligencia Artificial se refiere a un campo de la informática que se enfoca en la creación de..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/introduccion-al-aprendizaje-automatico.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2023-09-03 10:20:00+02:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/gaston-cabrera.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="UT1"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'UT1'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Machine Learning'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Definicion'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Aprendizaje Automatico'"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/Header.webp?raw=true">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Introducción al aprendizaje automático",
+  "headline": "Introducción al aprendizaje automático",
+  "datePublished": "2023-09-03 10:20:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Gaston Cabrera",
+    "url": "/author/gaston-cabrera.html"
+  },
+  "image": "https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/Header.webp?raw=true",
+  "url": "/introduccion-al-aprendizaje-automatico.html",
+  "description": "¿Que es la "Inteligencia Artificial"? La Inteligencia Artificial se refiere a un campo de la informática que se enfoca en la creación de..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+          <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="category/CasosdeEstudio.html" role="presentation">Casos de Estudio</a></li>
+          <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
+          <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
+          <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
+          <li><a href="/category/ut4.html" role="presentation">UT4</a></li>
+          <li><a href="/category/ut5.html" role="presentation">UT5</a></li>
+          <li><a href="/category/ut6.html" role="presentation">UT6</a></li>
+          <li><a href="/category/ut7.html" role="presentation">UT7</a></li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" aria-label="Home" title="Home">
+                  <i class="ic ic-arrow-left" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button" aria-label="Menu">
+              <i class="ic ic-menu" aria-hidden="true"></i>
+              <span>Menu</span>
+            </a>
+          </span>
+        </nav>
+        <h1 class="post-title">Introducción al aprendizaje automático</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+            | <time datetime="Sun 03 September 2023">Sun 03 September 2023</time>
+        </span>
+            <div class="post-cover cover" style="background-image: url('https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/Header.webp?raw=true')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <h1>¿Que es la "Inteligencia Artificial"?</h1>
+<p>La Inteligencia Artificial se refiere a un campo de la informática que se enfoca en la creación de sistemas y programas capaces de realizar tareas que, si fueran realizadas por un ser humano, requerirían inteligencia. Estos sistemas pueden comprender, razonar, aprender, planificar y tomar decisiones. La IA busca desarrollar máquinas que puedan imitar la capacidad cognitiva humana y realizar tareas de manera autónoma.</p>
+<h1>¿Qué es “Machine Learning”?</h1>
+<p>El Aprendizaje Automático es una subdisciplina de la Inteligencia Artificial que se centra en el desarrollo de algoritmos y modelos que permiten a las computadoras aprender de los datos y mejorar su rendimiento en tareas específicas sin ser programadas explícitamente. En lugar de seguir reglas predefinidas, el aprendizaje automático utiliza la información contenida en los datos para adaptarse y tomar decisiones.</p>
+<h1>Diferencia entre IA y ML</h1>
+<ol>
+<li>
+<p><strong>Ámbito de aplicación:</strong></p>
+<ul>
+<li>La IA abarca un campo amplio y multidisciplinario que incluye la creación de sistemas inteligentes que pueden realizar una variedad de tareas, como el procesamiento de lenguaje natural, la visión por computadora y la toma de decisiones.</li>
+<li>El Aprendizaje Automático es una subárea de la IA que se centra en el desarrollo de modelos y algoritmos específicos para entrenar máquinas en tareas basadas en datos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Naturaleza del enfoque:</strong></p>
+<ul>
+<li>La IA puede involucrar tanto sistemas basados en reglas (programación lógica) como sistemas basados en datos (aprendizaje automático).</li>
+<li>El Aprendizaje Automático se centra principalmente en el uso de datos y algoritmos de aprendizaje para mejorar el rendimiento de las máquinas en tareas específicas.</li>
+</ul>
+</li>
+<li>
+<p><strong>Requiere programación explícita:</strong></p>
+<ul>
+<li>La IA no siempre requiere el aprendizaje a partir de datos. Puede involucrar la programación de reglas lógicas para realizar tareas específicas.</li>
+<li>El Aprendizaje Automático se basa en datos y no requiere una programación explícita de reglas. Los modelos se ajustan automáticamente a partir de los datos de entrenamiento.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evolución y adaptación:</strong></p>
+<ul>
+<li>La IA puede implicar sistemas que no necesariamente se adaptan y evolucionan con el tiempo sin una intervención manual constante.</li>
+<li>El Aprendizaje Automático se caracteriza por la capacidad de las máquinas para aprender y adaptarse a medida que se les suministra más información, lo que permite una mejora continua en el rendimiento.</li>
+</ul>
+</li>
+</ol>
+<h1>Herramientas de Machine Learning</h1>
+<p>Investigando en la web, encontramos que existen muchas herramientas para realizar y ejecutar modelos de Machine Learning, algunos de ellos son:</p>
+<ul>
+<li>R y Python con SciKitLearn</li>
+<li>RapidMiner</li>
+<li>Microsoft Azure ML Studio</li>
+<li>Knime</li>
+<li>Weka</li>
+<li>Keras, TensorFlow, etc.</li>
+</ul>
+<p>En este curso utilizaremos Python con SciKitLearn y RapidMiner.</p>
+<h2>Python con SciKitLearn</h2>
+<p><img alt="python" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/python.png?raw=true"></p>
+<p>Python es un lenguaje de programación ampliamente utilizado en la ciencia de datos y el aprendizaje automático. SciKit-Learn, o scikit-learn, es una biblioteca de aprendizaje automático de código abierto en Python que proporciona una amplia variedad de algoritmos de aprendizaje automático y herramientas para la preparación y evaluación de datos. Es una de las bibliotecas más populares en la comunidad de aprendizaje automático de Python y se utiliza para tareas como clasificación, regresión, clustering y preprocesamiento de datos.</p>
+<h2>RapidMiner</h2>
+<p><img alt="RapidMiner" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/RapidMiner.png?raw=true"></p>
+<p>RapidMiner es una plataforma de análisis de datos y aprendizaje automático que permite a las organizaciones realizar análisis avanzados y construir modelos de aprendizaje automático de manera eficiente. Proporciona una interfaz visual fácil de usar que permite a los usuarios, incluso sin experiencia en programación, realizar tareas como preparación de datos, modelado predictivo y evaluación de modelos. RapidMiner se utiliza en una variedad de industrias para tomar decisiones basadas en datos y automatizar procesos de análisis.</p>
+<h1>Proceso CRISP-DM</h1>
+<p><img alt="Crisp" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/Crisp.png?raw=true"></p>
+<p>El proceso CRISP-DM, que significa "CRoss-Industry Standard Process for Data Mining" (Proceso Estándar de Minería de Datos de la Industria Cruzada), es un enfoque estándar y ampliamente utilizado en la industria para llevar a cabo proyectos de minería de datos. Este proceso proporciona una estructura sistemática y ordenada para guiar a los profesionales a través de las diversas etapas de un proyecto de minería de datos. A continuación, se describen las fases del proceso CRISP-DM:</p>
+<h2>Comprensión del Negocio (Business Understanding)</h2>
+<p>En esta etapa inicial, se trabaja en estrecha colaboración con los interesados del negocio para comprender los objetivos, requerimientos y el contexto en el que se aplicará la solución de minería de datos. Se definen los objetivos del proyecto y se establece un plan de trabajo.</p>
+<h2>Comprensión de los Datos (Data Understanding)</h2>
+<p>En esta etapa, se reúnen los datos relevantes para el proyecto. Se realiza una exploración de los datos para comprender su estructura, calidad y posibles problemas. Esto implica la identificación de fuentes de datos, la recolección de datos y la realización de un análisis exploratorio.</p>
+<h2>Preparación de los Datos (Data Preparation)</h2>
+<p>En esta fase, se preparan los datos para el modelado. Esto implica la limpieza de datos, la selección de variables relevantes, la transformación de datos y la creación de conjuntos de datos adecuados para el modelado. La calidad y preparación de los datos son cruciales para el éxito del proyecto.</p>
+<h2>Modelado (Modeling)</h2>
+<p>En esta etapa, se seleccionan y se aplican técnicas de modelado de datos, como algoritmos de aprendizaje automático, para construir modelos predictivos. Se ajustan varios modelos y se evalúan para determinar cuál es el más adecuado para los objetivos del proyecto.</p>
+<h2>Evaluación (Evaluation)</h2>
+<p>En esta fase, se evalúan los modelos construidos en términos de su rendimiento y su capacidad para cumplir los objetivos del negocio. Se utilizan métricas de evaluación para determinar la calidad del modelo y si cumple con los requisitos establecidos.</p>
+<h2>Despliegue (Deployment)</h2>
+<p>Una vez que se ha seleccionado el modelo adecuado, se procede a su implementación en el entorno de producción. Esto puede implicar la integración del modelo en un sistema existente, la creación de una aplicación de minería de datos o la toma de decisiones basadas en el modelo.</p>
+<p>El proceso CRISP-DM es iterativo, lo que significa que a menudo se revisan y repiten ciertas etapas a medida que se obtienen nuevos datos o se adquiere una comprensión más profunda del problema. Este enfoque estructurado ha demostrado ser valioso en proyectos de minería de datos, ya que ayuda a garantizar que los resultados sean relevantes para los objetivos del negocio y que se tomen decisiones informadas basadas en los datos.</p>
+<h1>Tipos de Algoritmos y sus Aplicaciones</h1>
+<p>A continuacion se presenta un cheat sheet con los algoritmos mas utilizados en Machine Learning y sus aplicaciones.</p>
+<p><img alt="CheatSheet" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/UT1/CheatSheet.png?raw=true"></p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Introducción al aprendizaje automático&amp;url=/introduccion-al-aprendizaje-automatico.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                      <i class="ic ic-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/introduccion-al-aprendizaje-automatico.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                      <i class="ic ic-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/introduccion-al-aprendizaje-automatico.html&amp;title=Introducción al aprendizaje automático" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                      <i class="ic ic-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+                    </a>
+                    <a title="Email" aria-label="Email" class="email" href="mailto:?subject=Introducción al aprendizaje automático&amp;body=/introduccion-al-aprendizaje-automatico.html">
+                      <i class="ic ic-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/ut1.html">&#39;UT1&#39;</a><a href="/tag/machine-learning.html">&#39;Machine Learning&#39;</a><a href="/tag/definicion.html">&#39;Definicion&#39;</a><a href="/tag/aprendizaje-automatico.html">&#39;Aprendizaje Automatico&#39;</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>
