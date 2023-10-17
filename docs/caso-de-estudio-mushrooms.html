@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Caso de Estudio - Mushrooms</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/caso-de-estudio-mushrooms.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- Custom fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="Objetivo El objetivo es determinar si un hongo es comestible (clase "e") o venenoso (clase "p") en función de varias características...">
+
+    <meta name="author" content="Gaston Cabrera">
+
+    <meta name="tags" content="'Casos de Estudio'">
+    <meta name="tags" content="'Analisis de Datos'">
+    <meta name="tags" content="'Python'">
+    <meta name="tags" content="'RapidMiner'">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Introduccion a los Metodos de Aprendizaje Automático"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Caso de Estudio - Mushrooms"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="Objetivo El objetivo es determinar si un hongo es comestible (clase "e") o venenoso (clase "p") en función de varias características..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/caso-de-estudio-mushrooms.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2023-10-15 10:20:00+02:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/gaston-cabrera.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="CasosdeEstudio"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Casos de Estudio'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Analisis de Datos'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'Python'"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="'RapidMiner'"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/Header.jpg?raw=true">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Caso de Estudio - Mushrooms",
+  "headline": "Caso de Estudio - Mushrooms",
+  "datePublished": "2023-10-15 10:20:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Gaston Cabrera",
+    "url": "/author/gaston-cabrera.html"
+  },
+  "image": "https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/Header.jpg?raw=true",
+  "url": "/caso-de-estudio-mushrooms.html",
+  "description": "Objetivo El objetivo es determinar si un hongo es comestible (clase "e") o venenoso (clase "p") en función de varias características..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+          <li><a href="/" role="presentation">Home</a></li>
+          <li><a href="/category/CasosdeEstudio.html" role="presentation">Casos de Estudio</a></li>
+          <li><a href="/category/ut1.html" role="presentation">UT1</a></li>
+          <li><a href="/category/ut2.html" role="presentation">UT2</a></li>
+          <li><a href="/category/ut3.html" role="presentation">UT3</a></li>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" aria-label="Home" title="Home">
+                  <i class="ic ic-arrow-left" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button" aria-label="Menu">
+              <i class="ic ic-menu" aria-hidden="true"></i>
+              <span>Menu</span>
+            </a>
+          </span>
+        </nav>
+        <h1 class="post-title">Caso de Estudio - Mushrooms</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/gaston-cabrera.html">Gaston Cabrera</a>
+            | <time datetime="Sun 15 October 2023">Sun 15 October 2023</time>
+        </span>
+            <div class="post-cover cover" style="background-image: url('https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/Header.jpg?raw=true')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <h1>Objetivo</h1>
+<p>El objetivo es determinar si un hongo es comestible (clase "e") o venenoso (clase "p") en función de varias características observadas de los hongos.</p>
+<p>Las características incluyen atributos como la forma del sombrero, la superficie del sombrero, la coloración, la forma del tallo, la textura, el olor, la población y la temporada de crecimiento.</p>
+<p>Se desea construir un modelo de clasificación capaz de clasificar de manera confiable los hongos en comestibles o venenosos.\</p>
+<h1>Entendimiento de los datos</h1>
+<p>El dataset cuenta con 22 atributos, todos nominales. La variable objetivo es class (clase), que tiene dos valores posibles: e para comestible y p para venenoso.</p>
+<h1>Datos en Formato Markdown</h1>
+<h2>cap-shape (Forma del sombrero)</h2>
+<ul>
+<li>bell (campana): b</li>
+<li>conical (cónica): c</li>
+<li>convex (convexa): x</li>
+<li>flat (plana): f</li>
+<li>knobbed (abotonada): k</li>
+<li>sunken (hundida): s</li>
+</ul>
+<h2>cap-surface (Superficie del sombrero)</h2>
+<ul>
+<li>fibrous (fibrosa): f</li>
+<li>grooves (surcos): g</li>
+<li>scaly (escamosa): y</li>
+<li>smooth (lisa): s</li>
+</ul>
+<h2>cap-color (Color del sombrero)</h2>
+<ul>
+<li>brown (marrón): n</li>
+<li>buff (crema): b</li>
+<li>cinnamon (canela): c</li>
+<li>gray (gris): g</li>
+<li>green (verde): r</li>
+<li>pink (rosa): p</li>
+<li>purple (púrpura): u</li>
+<li>red (rojo): e</li>
+<li>white (blanco): w</li>
+<li>yellow (amarillo): y</li>
+</ul>
+<h2>bruises? (¿Tiene moretones?)</h2>
+<ul>
+<li>bruises (con moretones): t</li>
+<li>no (sin moretones): f</li>
+</ul>
+<h2>odor (Olor)</h2>
+<ul>
+<li>almond (almendras): a</li>
+<li>anise (anís): l</li>
+<li>creosote (creosota): c</li>
+<li>fishy (a pescado): y</li>
+<li>foul (fétido): f</li>
+<li>musty (a humedad): m</li>
+<li>none (ninguno): n</li>
+<li>pungent (acre): p</li>
+<li>spicy (picante): s</li>
+</ul>
+<h2>gill-attachment (Tipo de sujeción de las branquias)</h2>
+<ul>
+<li>attached (adjunta): a</li>
+<li>descending (descendente): d</li>
+<li>free (libre): f</li>
+<li>notched (encajada): n</li>
+</ul>
+<h2>gill-spacing (Espaciado entre las branquias)</h2>
+<ul>
+<li>close (cercano): c</li>
+<li>crowded (abigarrado): w</li>
+<li>distant (distante): d</li>
+</ul>
+<h2>gill-size (Tamaño de las branquias)</h2>
+<ul>
+<li>broad (ancho): b</li>
+<li>narrow (estrecho): n</li>
+</ul>
+<h2>gill-color (Color de las branquias)</h2>
+<ul>
+<li>black (negro): k</li>
+<li>brown (marrón): n</li>
+<li>buff (crema): b</li>
+<li>chocolate (chocolate): h</li>
+<li>gray (gris): g</li>
+<li>green (verde): r</li>
+<li>orange (naranja): o</li>
+<li>pink (rosa): p</li>
+<li>purple (púrpura): u</li>
+<li>red (rojo): e</li>
+<li>white (blanco): w</li>
+<li>yellow (amarillo): y</li>
+</ul>
+<h2>stalk-shape (Forma del tallo)</h2>
+<ul>
+<li>enlarging (en agrandamiento): e</li>
+<li>tapering (en estrechamiento): t</li>
+</ul>
+<h2>stalk-root (Raíz del tallo)</h2>
+<ul>
+<li>bulbous (bulbosa): b</li>
+<li>club (club): c</li>
+<li>cup (taza): u</li>
+<li>equal (igual): e</li>
+<li>rhizomorphs (rizomorfos): z</li>
+<li>rooted (enraizada): r</li>
+<li>missing (desconocida): ?</li>
+</ul>
+<h2>stalk-surface-above-ring (Superficie del tallo (arriba del anillo))</h2>
+<ul>
+<li>fibrous (fibrosa): f</li>
+<li>scaly (escamosa): y</li>
+<li>silky (seda): k</li>
+<li>smooth (lisa): s</li>
+</ul>
+<h2>stalk-surface-below-ring (Superficie del tallo (abajo del anillo))</h2>
+<ul>
+<li>fibrous (fibrosa): f</li>
+<li>scaly (escamosa): y</li>
+<li>silky (seda): k</li>
+<li>smooth (lisa): s</li>
+</ul>
+<h2>stalk-color-above-ring (Color del tallo (arriba del anillo))</h2>
+<ul>
+<li>brown (marrón): n</li>
+<li>buff (crema): b</li>
+<li>cinnamon (canela): c</li>
+<li>gray (gris): g</li>
+<li>orange (naranja): o</li>
+<li>pink (rosa): p</li>
+<li>red (rojo): e</li>
+<li>white (blanco): w</li>
+<li>yellow (amarillo): y</li>
+</ul>
+<h2>stalk-color-below-ring (Color del tallo (abajo del anillo))</h2>
+<ul>
+<li>brown (marrón): n</li>
+<li>buff (crema): b</li>
+<li>cinnamon (canela): c</li>
+<li>gray (gris): g</li>
+<li>orange (naranja): o</li>
+<li>pink (rosa): p</li>
+<li>red (rojo): e</li>
+<li>white (blanco): w</li>
+<li>yellow (amarillo): y</li>
+</ul>
+<h2>veil-type (Tipo de velo)</h2>
+<ul>
+<li>partial (parcial): p</li>
+<li>universal (universal): u</li>
+</ul>
+<h2>veil-color (Color del velo)</h2>
+<ul>
+<li>brown (marrón): n</li>
+<li>orange (naranja): o</li>
+<li>white (blanco): w</li>
+<li>yellow (amarillo): y</li>
+</ul>
+<h2>ring-number (Número de anillos)</h2>
+<ul>
+<li>none (ninguno): n</li>
+<li>one (uno): o</li>
+<li>two (dos): t</li>
+</ul>
+<h2>ring-type (Tipo de anillo)</h2>
+<ul>
+<li>cobwebby (en tela de araña): c</li>
+<li>evanescent (evanescente): e</li>
+<li>flaring (en expansión): f</li>
+<li>large (grande): l</li>
+<li>none (ninguno): n</li>
+<li>pendant (colgante): p</li>
+<li>sheathing (envuelto): s</li>
+<li>zone (en zona): z</li>
+</ul>
+<h2>spore-print-color (Color de la impresión de esporas)</h2>
+<ul>
+<li>black (negro): k</li>
+<li>brown (marrón): n</li>
+<li>buff (crema): b</li>
+<li>chocolate (chocolate): h</li>
+<li>green (verde): r</li>
+<li>orange (naranja): o</li>
+<li>purple (púrpura): u</li>
+<li>white (blanco): w</li>
+<li>yellow (amarillo): y</li>
+</ul>
+<h2>population (Población)</h2>
+<ul>
+<li>abundant (abundante): a</li>
+<li>clustered (aglomerada): c</li>
+<li>numerous (numerosa): n</li>
+<li>scattered (dispersa): s</li>
+<li>several (varias): v</li>
+<li>solitary (solitaria): y</li>
+</ul>
+<h2>habitat (Hábitat)</h2>
+<ul>
+<li>grasses (praderas): g</li>
+<li>leaves (hojas): l</li>
+<li>meadows (prados): m</li>
+<li>paths (caminos): p</li>
+<li>urban (urbano): u</li>
+<li>waste (residuos): w</li>
+<li>woods (bosques): d</li>
+</ul>
+<h1>Datos faltantes</h1>
+<p>Al analizar los datos, nos encontramos con que hay datos faltantes en la variable <em>stalk-root</em>. Tenemos un total de 2480 sin categoria definida.</p>
+<p>Se podria eliminar todas las filas que tiene missings pero eso seria eliminar alrededor de un 30% del dataset. Se opta por imputar los valores faltantes por la moda.</p>
+<h1>Modelado</h1>
+<p>Se modelara el problema utilizando Naive Bayes y LDA. Compararemos su performance y elegiremos el mejor modelo.</p>
+<p>El model en RapidMiner queda de la siguiente manera:</p>
+<p><img alt="Model" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/Model.png?raw=true"></p>
+<h1>Evaluación</h1>
+<p>Performance Naive Bayes:</p>
+<p><img alt="NaiveBayes" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/NaiveBayes.png?raw=true"></p>
+<p>Performance LDA:</p>
+<p><img alt="LDA" src="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/LDA.png?raw=true"></p>
+<h1>Conclusion</h1>
+<p>Se puede concluir que el mejor modelo es el de Naive Bayes, ya que tiene un mejor performance en la clasificación de los hongos. Esta performance es de 99.57% de accuracy.</p>
+<h1>Archivos</h1>
+<ul>
+<li><a href="https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE/Mushrooms/Mushrooms.rmp">Mushrooms.rmp</a></li>
+</ul>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Caso de Estudio - Mushrooms&amp;url=/caso-de-estudio-mushrooms.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                      <i class="ic ic-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/caso-de-estudio-mushrooms.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                      <i class="ic ic-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/caso-de-estudio-mushrooms.html&amp;title=Caso de Estudio - Mushrooms" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                      <i class="ic ic-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+                    </a>
+                    <a title="Email" aria-label="Email" class="email" href="mailto:?subject=Caso de Estudio - Mushrooms&amp;body=/caso-de-estudio-mushrooms.html">
+                      <i class="ic ic-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/casos-de-estudio.html">&#39;Casos de Estudio&#39;</a><a href="/tag/analisis-de-datos.html">&#39;Analisis de Datos&#39;</a><a href="/tag/python.html">&#39;Python&#39;</a><a href="/tag/rapidminer.html">&#39;RapidMiner&#39;</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>

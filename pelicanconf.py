@@ -33,14 +33,15 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 MENUITEMS = (('Home', '/'),
-             ('Casos de Estudio', 'category/CasosdeEstudio.html'),
+             ('Casos de Estudio', '/category/CasosdeEstudio.html'),
              ('UT1', '/category/ut1.html'),
              ('UT2', '/category/ut2.html'),
              ('UT3', '/category/ut3.html'),
-             ('UT4', '/category/ut4.html'),
-             ('UT5', '/category/ut5.html'),
-             ('UT6', '/category/ut6.html'),
-             ('UT7', '/category/ut7.html'))
+            #  ('UT4', '/category/ut4.html'),
+            #  ('UT5', '/category/ut5.html'),
+            #  ('UT6', '/category/ut6.html'),
+            #  ('UT7', '/category/ut7.html')
+)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

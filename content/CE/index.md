@@ -7,7 +7,8 @@ Cover: https://github.com/gcabrera243/gcabrera243.github.io/blob/main/content/CE
 # Objetivo
 
 El objetivo principal al utilizar este conjunto de datos es predecir el precio de venta de una vivienda en Ames en función de ciertas características dadas.
-Esto es un problema típico de regresión, donde lo que se busca es encontrar una relación entre las características de entrada y el precio de venta de la casa.
+
+Esto es un problema de regresión, donde lo que se busca es encontrar una relación entre las características de entrada y el precio de venta de la casa.
 
 # Entendimiento de los datos
 
