@@ -33,7 +33,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 MENUITEMS = (('Home', '/'),
-             ('Casos de Estudio', '/category/CasosdeEstudio.html'),
+             ('Casos de Estudio', '/category/casosdeestudio.html'),
              ('UT1', '/category/ut1.html'),
              ('UT2', '/category/ut2.html'),
              ('UT3', '/category/ut3.html'),
